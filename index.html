@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GDELT Project</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Open Source Unit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A web interface for the GDELT Project" />
+  <meta property="og:description" content="A GDELT Project interface developed by the Foreign & Commonwealth Office" />
+  <meta property="og:url" content="https://gdelt.github.io/" />
+  <meta property="og:site_name" content="GDELT Project Interface" />
+  <meta property="og:image" content="https://cdn.rawgit.com/gdelt/gdelt.github.io/ed95fa02/screenshot.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/selectize.bootstrap3.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/tether.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/selectize.min.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/daterangepicker.js"></script>
+  <script type="text/javascript" src="js/d3.min.js"></script>
+  <script type="text/javascript" src="init.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113199736-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113199736-1');
+  </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="./">GDELT Project Interface</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link2</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container-fluid" id="main_row">
+  <div class="row">
+
+    <div class="col-md-4 col-sm-12" id="side_panel">
+    <p style="line-height: 100%; display: block; padding-top: 4px;">
+      <a href="https://www.gdeltproject.org/" target="_blank">GDELT</a>
+      is the <em>Global Database of Events, Language and Tone</em>, a multilingual web platform offering powerful search tools. This page is an interface to some GDELT APIs but has has no affiliation.
+      <a data-target="#helpModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#helpModal">How to use GDELT.</a>
+      <a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_blank">API documentation.</a>
+    </p>
+    <hr />
+      <!-- INPUT TABS -->
+      <div class="row tab col-12">
+        <button class="inputTabLinks col-4" onclick="manageInputTabs(event, 'tab_search')" id='searchTabInput'
+          title="SEARCH defines the terms and phrases within the content to filter by.">SEARCH</button>
+        <button class="inputTabLinks col-4" onclick="manageInputTabs(event, 'tab_image')" id='imageTabInput'
+          title="IMAGE let's you define query in terms of image tags.">IMAGE</button>
+        <button class="inputTabLinks col-4" onclick="manageInputTabs(event, 'tab_theme')" id='themeTabInput'
+          title="THEME: in development">THEME</button>
+      </div>
+
+      <!-- SEARCH TAB -->
+      <div id="tab_search" class="inputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="query">Search&nbsp;terms</label>
+            <input class="col-12" type="text" id="query" value='' title='Multiple terms (AND) Separated by spaces; phrases in double quotes
+e.g. "cats and dogs"; OR in parentheses e.g. (cats OR dogs)'>
+          </div>
+          <div class="col-4 selectContainer" style="display: none;">
+            <label for="searchlang">Search&nbsp;language</label>
+            <select class="form-control pickerSelectClass dd_opt" id="searchlang"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE TAB -->
+      <div id="tab_image" class="inputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="imagetag">Image&nbsp;tags</label>
+            <select class="form-control pickerSelectClass dd_opt" type="text" id="imagetag"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- THEME TAB -->
+      <div id="tab_theme" class="inputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="theme">Themes</label>
+            <select class="form-control pickerSelectClass dd_opt" type="text" id="theme"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- COUNTRIES & LANGUAGES -->
+      <div class="row col-12">
+        <div class="col-6 selectContainer">
+          <label for="sourcecountry">Source&nbsp;countries</label>
+          <select class="form-control pickerSelectClass dd_opt" id="sourcecountry" title="xxx"></select>
+        </div>
+        <div class="col-6 selectContainer">
+          <label for="sourcelang">Source&nbsp;languages</label>
+          <select class="form-control pickerSelectClass dd_opt" id="sourcelang"></select>
+        </div>
+      </div>
+
+      <!-- DOMAINS -->
+      <div class="row col-12">
+        <div class="col-9 selectContainer">
+          <label for="domain">Domains</label>
+          <select class="form-control pickerSelectClass dd_opt" id="domain"></select>
+        </div>
+        <!-- Exact domain checkbox -->
+        <div class="col-3">
+          <label class="domain_grp" id="domainis_lab" for="domainis" title="Specify exact domain or include part-matches (e.g. 'un.org' might also return content from 'catholicsun.org')">
+            <input class="domain_grp" id="domainis" name="domainis" type="checkbox" value="yes" onchange="checkboxDomain()"
+            title="Specify exact domain or include part-matches (e.g. 'un.org' might also return content from 'catholicsun.org')"/> Exact domain?</label>
+        </div>
+      </div>
+
+      <!-- DATE/TIME -->
+      <div class="row col-12">
+        <div class="col-8x">
+          <label for="datetime">Date range</label>
+          <input id="datetime" type="text" name="daterange" value="09/30/2017 - 12/20/2017" class="col-12x" disabled
+          title="Search within a specific date window.
+This option works when 'Recent' is blank."/>
+        </div>
+        <!-- Recent timespan -->
+        <div class="col-2x">
+          <label id="timespanlab" for="timespan" >Recent</label>
+          <input id="timespan" class="col-12x" name="timespan" type='text' value='1d'
+            title='Specify recent period, e.g: "12h", "5d", "3w", "6m", "1y" for hours/days/weeks/months/year (1y max), or without a code letter for minutes, e.g. "30"'/></input>
+        </div>
+        <!-- Google translate -->
+        <div class="col-2">
+          <label id="trans_lab" for="trans" title="Use Google Translate addon to offer translation options to results">GT</label>
+          <input id="trans" name="trans" type="checkbox" value="yes" onchange="checkboxTrans()"
+            title="Translate atricle titles with Google Translate.
+This works with ART-LIST and ART-GALLERY modes"/>
+
+        </div>
+      </div>
+      <br />
+
+      <!-- OUTPUT TABS -->
+      <hr />
+      <div class="row tab col-12">
+        <button id="contentTabOutput" class="outputTabLinks col-3" onclick="manageOutputTabs(event, 'tab_content')"
+          title="The CONTENT tab provides ways to see the content.">CONTENT</button>
+        <button id="timelineTabOutput" class="outputTabLinks col-3" onclick="manageOutputTabs(event, 'tab_timeline')"
+          title="The TIMELINE tab provides time-based analytics.">TIMELINE</button>
+        <button id="geoTabOutput" class="outputTabLinks col-3" onclick="manageOutputTabs(event, 'tab_geo')"
+          title="With the GEO interface you can see where locations have
+been mentioned within content within the past 7 days.">GEO</button>
+        <button id="tvTabOutput" class="outputTabLinks col-3" onclick="manageOutputTabs(event, 'tab_tv')"
+          title="The TV tab provides television news analytics.">TV</button>
+      </div>
+
+      <!-- CONTENT TAB -->
+      <div id="tab_content" class="outputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="contentmode">Visualisation&nbsp;options</label>
+            <select class="form-control pickerSelectClass col-12" id="contentmode" value="ArtList"></select>
+          </div>
+        </div>
+
+        <!-- DOC API OUTPUT OPTIONS - WE MOVE THIS SECTION BETWEEN DOC TABS-->
+        <div id="doc_results_options" class="row col-12">
+          <div id="maxrecordsdiv" class="col-4 selectContainer">
+            <label for="maxrecords">Results:&nbsp;<span id="maxrecordslab"></label>
+            <input type="range" min="1" max="250" value="75" class="slider col-12" id="maxrecords" title="Number of records to return (from 1-250). This is effective for ART-LIST and ART-GALLERY modes">
+          </div>
+          <div id="timelinesmoothdiv" class="col-3 selectContainer" style="display: none;">
+            <label for="timelinesmooth">Smooth: <span id="timelinesmoothlab"></label>
+            <input type="range" min="0" max="30" value="0" class="slider col-12" id="timelinesmooth" title="Line smoothing with rolling average">
+          </div>
+          <div class="col-3 selectContainer">
+            <label for="format">Format</label>
+            <select class="form-control pickerSelectClass dd_opt" id="format" class="col-12"></select>
+          </div>
+          <div id="sortdiv" class="col-5 selectContainer">
+            <label for="sort">Sort</label>
+            <select class="form-control pickerSelectClass dd_opt" id="sort" class="col-12"></select>
+          </div>
+
+          <div id="analysis_buttons_div" class="row col-6" style="display: none;">
+            <label id="analysis_buttons_lab" class="col-12 text-center" for="analysis_buttons">COMPARE: <span id="analysis_datacount">0</span><span id='data_lnk'></span></label>
+            <div id="analysis_buttons" class="row col-12">
+              <div class="col-4 selectContainer"><button id="add_data" title="Add data for current query to memory for comparison with others" type="button" onclick="add_layers()" data-toggle="modal" data-target="#compareAddModal" class="col-12 text-center">Add</button></div>
+              <div class="col-4 selectContainer"><button id="view_data" title="See how the saved datasets match up" onclick="action_analysis()" class="col-12 text-center">View</button></div>
+              <div class="col-2 selectContainer"><button id="clear_data" title="Clear data" onclick="clear_analysis()" class="col-12 text-center">X</button></div>
+              <div class="col-2 selectContainer"><button id="compare_modal" title="Guide to the COMPARE tool" type="button" data-toggle="modal" data-target="#compareInfoModal" class="col-12 text-center">i</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE TAB -->
+      <div id="tab_timeline" class="outputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="timelinemode">Timeline&nbsp;options</label>
+            <select class="form-control pickerSelectClass col-12" id="timelinemode" value="TimeLineVol"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- GEO TAB -->
+      <div id="tab_geo" class="outputTab">
+
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="geomode">Geo&nbsp;options</label>
+            <select class="form-control pickerSelectClass col-12" id="geomode" value="PointData"></select>
+          </div>
+        </div>
+
+        <div class="row col-12">
+          <div class="col-4 selectContainer">
+            <label for="geoformat">Format</label>
+            <select class="form-control pickerSelectClass dd_opt" id="geoformat" class="col-12"></select>
+          </div>
+          <div class="col-4 selectContainer">
+            <label for="geotimespan" class="center-block">Timespan</label>
+            <input class="center-block" type="text" id="geotimespan" value='1d' title='Timespan from 1-7 days in format "7d"'>
+            <!-- <input type="range" min="15" max="1440" value="1440" step="15" class="slider col-12" id="geotimespan" title="Timespan in last 24h (maximum period for the GEO API)"> -->
+          </div>
+          <div class="col-4 selectContainer">
+            <label for="geonear">Near</label>
+            <input class="col-12" type="text" id="geonear" value='' title='Returns all matches within a certain radius (bounding box) of a given point.
+You specify a particular latitude and longitude and distance in either miles
+(default) or kms (e.g. for 100km from Paris "48.85,2.35,100km")
+(Degrees need at least one decimal place - eg. "48.0")'>
+          </div>
+        </div>
+
+        <div class="row col-12">
+          <div class="col-4 selectContainer">
+            <label for="geolocationcc">Country</label>
+            <select class="form-control pickerSelectClass dd_opt" id="geolocationcc"></select>
+          </div>
+          <div class="col-4 selectContainer">
+            <label for="geolocationadm1">ADM1</label>
+            <select class="form-control pickerSelectClass dd_opt" id="geolocationadm1" class="col-12"></select>
+          </div>
+          <div class="col-4 selectContainer">
+            <label for="geolocation">Location</label>
+            <input class="col-12" type="text" id="geolocation" value='' title='Searches for a given word or phrase in the full
+formal name of the location - e.g. New York'>
+          </div>
+        </div>
+      </div>
+
+      <!-- TV TAB -->
+      <div id="tab_tv" class="outputTab">
+        <div class="row col-12">
+          <div class="col-12">
+            <label for="tvmode">TV&nbsp;options</label>
+            <select class="form-control pickerSelectClass col-12" id="tvmode" value="TimelineVol"></select>
+          </div>
+        </div>
+        <div class="row col-12">
+          <div class="col-9">
+            <label for="network">Network</label>
+            <select class="form-control pickerSelectClass dd_opt col-12" type="text" id="network"></select>
+          </div>
+          <div class="col-3">
+            <label for="context">Context&nbsp;term(s)</label>
+            <input class="col-12" type="text" id="context" value='' title='Filter results further by specifying additional filter keywords
+which must be matched in the same 15s clip as the positive
+"query" match or clip before or after it'>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row col-12"><a id="gdelt_api_call" target='_blank'></a></div>
+      <!-- <div class="row col-12"><a id="data_link" target='_blank'></a></div> -->
+    </div>  <!-- END SIDE-PANEL DIV -->
+
+    <!-- MAIN PANEL DIV -->
+    <div id="main_panel" class="col-md-8 col-sm-12 intrinsic-container intrinsic-container-16x9">
+
+      <div id='main_panel_title_row' class="row col-12">
+        <h3 id='iframe_title' class='col-12'>[ ]</h3>
+      </div>
+      <div id='iframe_container' class="row col-12">
+        <iframe id="gdelt_iframe" width=100% src="" frameBorder="0"></iframe>
+      </div>
+      <div id='buttons_box'>
+        <button class='zoombutton' type="button" onclick="iframe_zoom(0)" style="display: inline-block;">-</button>
+        <button class='zoombutton' type="button" onclick="iframe_zoom(1)" style="display: inline-block;">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HELP MODAL -->
+<div class="modal fade" id="helpModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">How to use GDELT</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <b>With GDELT you can:</b>
+        <ul>
+          <li> search in English for global content in any or all languages on a particular topic </li>
+          <li> search for specific content or published in the past hour from eg. Japan, or in Japanese, or referencing a Japanese location </li>
+          <li> find content based on features and text in its imagery </li>
+          <li> investigate and compare media trends over time </li>
+        </ul>
+        <b> QUERY DEFINITION </b>
+        <ul>
+          <li> <b>Search term</b> - any work or phrase in English (GDELT matches these against English translations of non-English content). Phrases should be in double quotes. Spaces outside quotes are interpreted as AND. You can also search for <a href='https://gdelt.github.io/#api=geo&query=(missile OR nuclear)&geolocationcc=KN&geomode=PointData&geotimespan=7d' target='_blank'>'(x OR y)'</a> </li>
+          <li> <b>Image tags</b> - images within content are processed using deep learning algorithms to identify features and text they contain. Search for available tags in the dialogue box (<a href='https://gdelt.github.io/#api=doc&query=&imagetag=military%20vehicle,tank,self%20propelled%20artillery&sourcecountry=UP&contentmode=ImageCollageInfo&maxrecords=75&timespan=1w' target='_blank'>example</a>)</li>
+          <li> <b>Themes</b> - content is interpreted and linked to 'themes' reflecting its subject matter, which you can search by. Themes are based on GDELT's Global Knowledge Graph (GKG). </li>
+          <li> <b>Source countries</b> - countries of content origin. Choose up to ~7 - current implementation interprets these as (tag1 OR tag2) </li>
+          <li> <b>Source languages</b> - languages of the content. Choose up to ~7 - currently interpreted as (theme1 OR theme2) </li>
+          <li> <b>Domain</b> - define web domain of content - e.g. 'bbc.co.uk' or top-level domain '.gov' (US government content) </li>
+          <li> <b>Date range</b> - define any window for content dated in the past 12 months. The 'Recent' field must be clear to use this. </li>
+          <li> <b>Recent</b> - set to return most recent content in terms of minutes/hours/days/months/year. Use format '12h', '5d', '3w', '6m', '1y' (1y max) or just a number for minutes. </li>
+        </ul>
+        <b> ANALYSIS MODES </b>
+        <ul>
+          <li> <b>CONTENT</b> - This tab offers the various modes to access the content matching the search (<a href='https://gdelt.github.io/#api=doc&query=Essequibo Venezuela (border OR claim OR territory OR territorial)&sourcecountry=GY&contentmode=ArtList&maxrecords=75&timespan=1y' target='_blank'>example1</a>  )</li>
+          <li> <b>TIMELINE</b> - This offers the modes available to view volumetric trends for the query over time (<a href='https://gdelt.github.io/#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=VE,GY&timelinemode=TimelineSourceCountry&timelinesmooth=14&timespan=1y' target='_blank'>example1</a>, <a href='https://gdelt.github.io/#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=-US&sourcelang=spa,eng&timelinemode=TimelineLang&timelinesmooth=14&timespan=1y' target='_blank'>example2</a>). </li>
+          <li> <b>GEO</b> - Geographical tools to investigate media published in the past 7 days. Some modes (e.g. default POINT DATA <a href='https://gdelt.github.io/#api=geo&query=(refugees%20OR%20migrants)%20(boat%20OR%20ship)&geolocationcc=AG,LY,TS,MO,LE,EG&geomode=PointData&geotimespan=7d' target='_blank'>example</a>) report not the origins of content, but countries and place names that are referenced. Some of the modes are image-specific, and will only work for image tag searches. Others work only with search terms and not image tags. </li>
+          <li> <b>TV</b> - This explores GDELT's Television Explorer API, a collaboration with the Internet Archive to make searchable the "closed captioning" text streams accompanying TV news - i.e. the digitised speech that is broadcast - for selected networks.</li>
+        </ul>
+        <b> COMPARE TOOL </b>
+        <ul><li> This tool works by remembering the data for TIMELINE queries that you <i>Add</i>, and comparing them when you click <i>View</i>. <a href='#' onclick="javascript:$('#helpModal').modal('hide');$('#compare_modal').click();">See the guide</a>. </li></ul>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- COMPARE INFO MODAL -->
+<div class="modal fade" id="compareInfoModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">The COMPARE tool</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>The tool is offered by this webpage, not GDELT. Take a moment to understand how it works so you get the results you want:</p>
+        <ul>
+          <li><p>Usage: 1) define a GDELT query to compare with another, 2) click 'Add' and give it a name, 3) repeat until you've added all the queries you want to compare, 4) click 'View'.</em>. See <a href="./#compare&cnn.com=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DKorea%20nuclear%2520domain%3Acnn.com%26mode%3DTimelineVol%26timelinesmooth%3D5%26timespan%3D1y&foxnews.com=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DKorea%20nuclear%2520domain%3Afoxnews.com%26mode%3DTimelineVol%26timelinesmooth%3D5%26timespan%3D1y" target="_blank">CNN/Fox News coverage example</a>.</a></p></li>
+          <li><p>GDELT 's timeline VOLUME modes report the <em>proportion of global media content that matches the query</em> (however the query is defined in terms of keywords/phrases, country/language filters, imagetags, etc). When a filter is added (such as source-country=France or language=French) the reported values still show proportion of <em>global</em> content.</p></li>
+          <li><p>By contrast, GDELT's timeline LANGUAGE mode reports the proportion of media <em>in that language</em> that matches the query. Likewise SOURCE COUNTRY mode reports the proportion of media originating <em>in that country</em> that matches the query.</p></li>
+          <li><p>When you use the <em>COMPARE</em> tool take care to add query layers defined with the appropriate timeline mode:</p>
+            <ul>
+              <li><p>If you want simple comparisons between countries of the same word/phrase (eg. 'food prices') you should just use the SOURCE COUNTRY mode and not the COMPARE tool (<a href="./#api=doc&query=food%20(price%20OR%20prices)&sourcecountry=IR,SY,IZ&timelinemode=TimelineSourceCountry&timelinesmooth=14&timespan=1y" target="_blank">example</a>). Likewise for simple language comparisons and LANGUAGE mode.</p></li>
+              <li><p>If you want to compare proportions of <em>global content</em> use COMPARE with individual queries defined with VOLUME mode (<a href="./#compare&Iran%20(food%20prices)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3Dfood%20(price%20OR%20prices)%2520sourcecountry%3AIR%26mode%3DTimelineVol%26timelinesmooth%3D5%26timespan%3D1y&Iraq%20(food%20prices)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3Dfood%20(price%20OR%20prices)%2520sourcecountry%3AIZ%26mode%3DTimelineVol%26timelinesmooth%3D5%26timespan%3D1y&Syria%20(food%20prices)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3Dfood%20(price%20OR%20prices)%2520sourcecountry%3ASY%26mode%3DTimelineVol%26timelinesmooth%3D5%26timespan%3D1y" target="_blank">example</a>).</p></li>
+              <li><p>If you want to compare different things in different countries/languages (e.g. 'President X' in country A's media with 'Prime Minister Y' in country B's) you can use COMPARE (<a href="./#compare&Putin%20(Russian%20media)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DPutin%2520sourcecountry%3ARS%26mode%3DTimelineSourceCountry%26timelinesmooth%3D5%26timespan%3D1y&Trump%20(US%20media)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DTrump%2520sourcecountry%3AUS%26mode%3DTimelineSourceCountry%26timelinesmooth%3D5%26timespan%3D1y&Merkel%20(German%20media)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DMerkel%2520sourcecountry%3AGM%26mode%3DTimelineSourceCountry%26timelinesmooth%3D5%26timespan%3D1y&Erdogan%20(Turkish%20media)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3D(Erdogan%20OR%20Erdo%C4%9Fan)%2520sourcecountry%3ATU%26mode%3DTimelineSourceCountry%26timelinesmooth%3D5%26timespan%3D1y&Macron%20(French%20media)=https%3A%2F%2Fapi.gdeltproject.org%2Fapi%2Fv2%2Fdoc%2Fdoc%3Fquery%3DMacron%2520sourcecountry%3AFR%26mode%3DTimelineSourceCountry%26timelinesmooth%3D5%26timespan%3D1y" target="_blank">see example</a>). Please note that COMPARE will only work properly with layers defined with SOURCE COUNTRY and LANGUAGE modes if a <em>single country or language filter</em> (respectively) is applied for each data layer.</p></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- COMPARE ADD MODAL -->
+<div class="modal fade" id="compareAddModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">COMPARE: Add/Edit/Remove data</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <b> Here you can:</b>
+        <ul>
+          <li><b>ADD</b> the current GDELT timeline query as a new layer. Just give it a name below.</li>
+          <li><b>REPLACE</b> an existing layer with the current GDELT timeline query. Enter the same name as the existing layer, or use the shortcut link.</li>
+          <li><b>REMOVE</b> an existing layer. Enter its name prefixed with a hyphen '-', or use the shortcut link.</li>
+        </ul>
+        <span><b> Existing layers:</b> (<i>GDELT URL excerpt with layer specifications</i>)</span>
+        <ul id="compareLayers"></ul>
+        <label for="compareName"><b>Query name</b></label>
+        <input class="col-12" type="text" id="compareName" value='' title=''>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="compareAddModalOK" type="button" onclick="add_dataset($('#compareName').val())" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" onclick="$('#compareName').val('')" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="responsive.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="analysis.js"></script>
+</body>
+</html>

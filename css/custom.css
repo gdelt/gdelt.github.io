@@ -1,0 +1,624 @@
+/*
+REMOVE DEFAULT BOOTSTRAP MARGINS/PADDING
+http://parkhurstdesign.com/reset-bootstrap-padding-margins-for-theming/
+*/
+
+html,body {
+  height: 100%; margin: 0px; padding: 0px;
+}
+
+#navbar {
+  margin-bottom:0;
+}
+
+.alert {
+  border-radius: 0;
+}
+
+.container {
+  width:100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-sm-1,
+.col-xs-2, .col-sm-2, .col-md-2, .col-sm-2,
+.col-xs-3, .col-sm-3, .col-md-3, .col-sm-3,
+.col-xs-4, .col-sm-4, .col-md-4, .col-sm-4,
+.col-xs-5, .col-sm-5, .col-md-5, .col-sm-5,
+.col-xs-6, .col-sm-6, .col-md-6, .col-sm-6,
+.col-xs-7, .col-sm-7, .col-md-7, .col-sm-7,
+.col-xs-8, .col-sm-8, .col-md-8, .col-sm-8,
+.col-xs-9, .col-sm-9, .col-md-9, .col-sm-9,
+.col-xs-10, .col-sm-10, .col-md-10, .col-sm-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-sm-11,
+.col-xs-12, .col-sm-12, .col-md-12, .col-sm-12 {
+  position: relative;
+  height:100%;
+  min-height: 1px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.footer {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: none;
+}
+
+.panel {
+  border:none;
+}
+
+/*--------------------------------------------------------------------------*/
+
+#side_panel {
+  border: 2px solid #555;
+  background-color: #555;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+/*fix max-width for main panel (normal)*/
+#main_panel {
+  background-color: #ccc;
+  padding: 5px 10px 5px 10px;
+
+  height: -webkit-calc(100vh - 56px);
+  height:    -moz-calc(100vh - 56px);
+  height:         calc(100vh - 56px);
+}​
+
+/*responsive iframe*/
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  /*overflow: hidden;*/
+}
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 { padding-bottom: 56.25%;}
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 { padding-bottom: 75%; }
+.intrinsic-container iframe {
+  position: absolute;
+  /*top:50px;*/
+  left: 0;
+  width: 100%;
+  /*height: 100%;*/
+  height: -webkit-calc(100% - 50px);
+  height:    -moz-calc(100% - 50px);
+  height:         calc(100% - 50px);
+}
+
+/*fix issue of extra space added to bottom*/
+#main_row{ margin-bottom: 0px;}
+
+div.option:hover{ background-color: cyan;}
+
+hr{
+  border-color: #aaa;
+  margin: 10px 0px 0px 0px;
+}
+
+input, label {
+  display:block;
+}
+
+label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+input{
+  min-height: 28px !important;
+  color: black;
+  background-color: #ccc;
+  border: none;
+  /*border-color: rgb(73, 80, 87);*/
+}
+
+label{
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
+  /*line-height:100%;*/
+}
+
+/*stop single selectize items expanding boxes*/
+.item{
+  background-color: white !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 12px;
+  /*padding-bottom: 13px;*/
+}
+div.item.active {
+  background-color: grey !important;
+  color: white !important;
+}
+.items{
+  /*padding-top: 2px !important;
+  padding-bottom: 2px !important;*/
+  padding: 2px 3px 2px 3px !important;
+}
+
+#query {
+  margin-bottom: 6px;
+}
+
+/* dropdown selecter */
+#searchlang, #sourcecountry, #sourcecountry-selectized {
+  padding: 0px 0px 0px 0px;*/
+  background-color: #ccc;
+}
+
+/* fix input/selectize height anomaly */
+#imagetag{
+  margin-bottom: 6px;
+  height: 24px;
+}
+
+.selectize-input{
+  padding: 0px 0px 0px 0px;
+  max-height: 100px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+.selectize-control, .selectize-input{
+  min-height: 28px;
+  background-color: #ddd;
+}
+
+.selectize-dropdown, .selectize-dropdown.form-control{
+    /*height: 60vh !important;*/
+    max-height: 60vh !important;
+    font-size: 12px;
+}
+
+.selectize-dropdown-content{
+    max-height: 60vh !important;
+}
+
+.dd_opt{
+  background-color: #fff;
+}
+
+p{
+  margin-bottom: 8px;
+}
+
+p, label{
+  color: #ddd;
+}
+
+.modal-body > p, .modal-body > label {
+  color: black;
+}
+
+#compareLayers > li {
+  overflow-wrap: break-word;
+}
+
+#compareLayers > li > a {
+  padding: 0px 2px 0px 2px;
+}
+
+a{ color: #00CED1;}
+a:hover { color: cyan;}
+
+.domain_grp {
+  padding-top: 15px !important;
+  /*line-height: 15px;*/
+  display:inline-block;
+  vertical-align: middle !important;
+}
+#domainis {
+  width: 20px;
+  height: 20px;
+}
+
+#domainis_lab { line-height:1em; }
+
+#trans {
+  width: 20px;
+  height: 20px;
+  margin: -2px 0px 0px 20px !important;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+#trans_lab {
+  display: block;
+  margin: 20px 0px 0px 20px !important;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+
+/*highligh colour*/
+::-moz-selection { /* Firefox */
+    /*color: black;*/
+    background: skyblue;
+}
+
+::selection {
+    /*color: white;*/
+    background: skyblue;
+}
+
+.container-fluid {
+  margin: 0px 0px 10px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.row {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.col-1, .col-2, .col-3, .col-4,
+.col-5, .col-6, .col-7, .col-8,
+.col-9, .col-10, .col-11, .col-12{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 4px 0px 4px;
+}
+
+/* calendar css - because bootstrap v4 doesn't support glyphicons: https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration*/
+
+.table-condensed > thead > tr > th > i {
+  width: 20px !important;
+  padding: 5px;
+  color: black !important;
+}
+.table-condensed > thead > tr > th.available:hover {
+  background-color: cyan !important;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-chevron-left:before {
+  content: "\e079";
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  font-size: 30px;
+
+}
+.glyphicon-chevron-right:before {
+  content: "\e080";
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  font-size: 30px;
+}
+
+/*--------------------------------------------------------*/
+
+.daterangepicker_input > input{
+  text-align: center;
+}
+
+#gdelt_api_call {
+  font-size: 12px;
+  line-height: 100%;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main_panel_title_row {
+  min-height: 50px !important;
+  color: #444;
+  display: table;
+}
+
+#iframe_title {
+  height: 50px !important;
+  font-size: 32px;
+  vertical-align: middle;
+  display: table-cell;
+  font-style: italic;
+}
+
+/*--------------------------------------------------------*/
+/*date handling*/
+
+#datetime {
+  width: 180px !important;
+  font-size: 12px;
+  text-align: center;
+}
+
+#datetime:disabled {
+  background-color: grey;
+}
+
+#timespan {
+  width: 60px !important;
+  text-align: center;
+  margin-left: 7px;
+}
+#timespanlab {
+  margin-left: 6px;
+}
+
+#geotimespan{
+  width: 60px !important;
+  text-align: center;
+}
+
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+   text-align:center;
+}
+
+/*-----------------------------------------------------*/
+/*TABS*/
+
+/* Style the tab */
+.tab {
+    /*overflow: hidden;*/
+    /*border: 1px solid #ccc;*/
+    background-color: inherit;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: #444;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px 12px;
+    transition: 0s;
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #111;
+    color: cyan;
+}
+
+/* Style the tab content */
+.outputTabContent, .inputTabContent, .outputTab, .inputTab {
+    display: none;
+    padding: 0px 0px;
+    /*border: 1px solid #ccc;*/
+    border-top: none;
+}
+
+/*--------------------------------------------------*/
+/*maxrecords slider*/
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #666;
+    /* outline: solid red; */
+    /* opacity: .8; */
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: cyan;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: cyan;
+    cursor: pointer;
+}
+
+
+
+html, body {
+  background-color: #ccc;
+  /*overflow: hidden;*/
+  height: 100%;
+  width: 100%;
+}
+
+#main_panel {
+  padding: 0px 0px 0px 0px;
+}
+
+#iframe_container {
+  background-color: white;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  height: 80vh;
+  width: 80vw;
+  overflow: visible;
+  margin: 0px;
+}
+
+#gdelt_iframe {
+  /*overflow: scroll;*/
+  border: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  z-index: 990;
+}
+.zoombutton {
+  display: inline-block;
+  float: right;
+  width: 30px !important;
+  z-index: 999;
+}
+
+#analysis_buttons_lab{
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#analysis_buttons{
+  margin-bottom: 4px;
+}
+
+#buttons_box {
+  min-width: 60px !important;
+  padding: 5px;
+  z-index: 999;
+}
+
+#buttons_box > button {
+  margin-top: 0px;
+}
+
+#add_data, #view_data, #clear_data, #compare_modal {
+  background-color: #dff;
+  padding: 0px;
+  text-align: center !important;
+}
+
+#analysis_buttons_div {
+  border:1px solid #8aa;
+}
+
+#compareInfoModal p {
+  color: black;
+}
+/* RESPONSIVE TEXT SIZING */
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    label, .inputTabLinks, .outputTabLinks, p, h3, button {
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    label, .inputTabLinks, .outputTabLinks, p, h3, button {
+        font-size: 0.9em !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    label, .inputTabLinks, .outputTabLinks, p, h3, button {
+        font-size: 0.8em !important;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    label, .inputTabLinks, .outputTabLinks, p, button {
+        font-size: 0.7em !important;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    label, .inputTabLinks, .outputTabLinks, p, button {
+        font-size: 0.85em !important;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    label, .inputTabLinks, .outputTabLinks, p, button {
+        font-size: 1em !important;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    h3 {
+        font-size: 1.5em !important;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    h3  {
+        font-size: 1.7em !important;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    h3 {
+        font-size: 1.9em !important;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/* flash data div when json received */
+
+#analysis_buttons_div {
+    -webkit-transition: border .5s linear, box-shadow .5s linear;
+       -moz-transition: border .5s linear, box-shadow .5s linear;
+            transition: border .5s linear, box-shadow .5s ease;
+}
+
+#analysis_buttons_div.active {
+    -webkit-box-shadow: 0 0 20px white;
+       -moz-box-shadow: 0 0 20px white;
+            box-shadow: 0 0 20px white;
+}
+
+#modal_btn { position: fixed; top:10px; right:10px; }

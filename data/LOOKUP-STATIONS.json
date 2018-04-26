@@ -1,0 +1,1116 @@
+{
+  "station_details": [{
+    "StationID": "ALJAZ",
+    "Description": "Al Jazeera",
+    "Market": "International",
+    "Network": "ALJAZ",
+    "StartDate": "20170911T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "ALJAZAM",
+    "Description": "Al Jazeera America",
+    "Market": "NationalDiscontinued",
+    "Network": "ALJAZAM",
+    "StartDate": "20130820T000000Z",
+    "EndDate": "20160412T235959Z"
+  }, {
+    "StationID": "BBCNEWS",
+    "Description": "BBC News",
+    "Market": "International",
+    "Network": "BBCNEWS",
+    "StartDate": "20170101T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "BETW",
+    "Description": "BET - San Francisco (BETW)",
+    "Market": "San Francisco",
+    "Network": "BET",
+    "StartDate": "20161213T000000Z",
+    "EndDate": "20170407T235959Z"
+  }, {
+    "StationID": "BLOOMBERG",
+    "Description": "Bloomberg",
+    "Market": "National",
+    "Network": "BLOOMBERG",
+    "StartDate": "20131205T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "CNBC",
+    "Description": "CNBC",
+    "Market": "National",
+    "Network": "CNBC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "CNN",
+    "Description": "CNN",
+    "Market": "National",
+    "Network": "CNN",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "COM",
+    "Description": "Comedy Central",
+    "Market": "NationalSpecialty",
+    "Network": "COM",
+    "StartDate": "20110510T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "CSPAN",
+    "Description": "CSPAN",
+    "Market": "National",
+    "Network": "CSPAN",
+    "StartDate": "20090604T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "CSPAN2",
+    "Description": "CSPAN2",
+    "Market": "National",
+    "Network": "CSPAN",
+    "StartDate": "20090604T000000Z",
+    "EndDate": "20180314T235959Z"
+  }, {
+    "StationID": "CSPAN3",
+    "Description": "CSPAN3",
+    "Market": "National",
+    "Network": "CSPAN",
+    "StartDate": "20120126T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "CURRENT",
+    "Description": "CurrentTV - San Francisco (CURRENT)",
+    "Market": "San Francisco",
+    "Network": "CurrentTV",
+    "StartDate": "20120113T000000Z",
+    "EndDate": "20130816T235959Z"
+  }, {
+    "StationID": "DW",
+    "Description": "DeutscheWelle",
+    "Market": "International",
+    "Network": "DW",
+    "StartDate": "20170919T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "FBC",
+    "Description": "FOX Business",
+    "Market": "National",
+    "Network": "FBC",
+    "StartDate": "20120820T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "FOXNEWS",
+    "Description": "FOX News",
+    "Market": "National",
+    "Network": "FOXNEWS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "HLN",
+    "Description": "HLN - Maryland (HLN)",
+    "Market": "Maryland",
+    "Network": "HLN",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20100517T235959Z"
+  }, {
+    "StationID": "KBCW",
+    "Description": "CW - San Francisco (KBCW)",
+    "Market": "San Francisco",
+    "Network": "CW",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20140220T235959Z"
+  }, {
+    "StationID": "KCAU",
+    "Description": "ABC - Sioux City (KCAU)",
+    "Market": "Sioux City",
+    "Network": "ABC",
+    "StartDate": "20151013T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KCCI",
+    "Description": "CBS - Des Moines (KCCI)",
+    "Market": "Des Moines",
+    "Network": "CBS",
+    "StartDate": "20151014T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KCNC",
+    "Description": "CBS - Denver (KCNC)",
+    "Market": "Denver",
+    "Network": "CBS",
+    "StartDate": "20160101T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KCNS",
+    "Description": "SonLife - San Francisco (KCNS)",
+    "Market": "San Francisco",
+    "Network": "SonLife",
+    "StartDate": "20111225T000000Z",
+    "EndDate": "20150829T235959Z"
+  }, {
+    "StationID": "KCRG",
+    "Description": "ABC - Cedar Rapids (KCRG)",
+    "Market": "Cedar Rapids",
+    "Network": "ABC",
+    "StartDate": "20151019T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KCSM",
+    "Description": "PBS - San Mateo California (KCSM)",
+    "Market": "San Mateo California",
+    "Network": "PBS",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KCSMMHZ",
+    "Description": "KCSMMHZ - San Mateo California (KCSMMHZ)",
+    "Market": "San Mateo California",
+    "Network": "KCSMMHZ",
+    "StartDate": "20110805T000000Z",
+    "EndDate": "20130722T235959Z"
+  }, {
+    "StationID": "KDSM",
+    "Description": "FOX - Des Moines (KDSM)",
+    "Market": "Des Moines",
+    "Network": "FOX",
+    "StartDate": "20151102T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KDTV",
+    "Description": "Univision - San Francisco (KDTV)",
+    "Market": "San Francisco",
+    "Network": "Univision",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KDVR",
+    "Description": "FOX - Denver (KDVR)",
+    "Market": "Denver",
+    "Network": "FOX",
+    "StartDate": "20160102T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KFSF",
+    "Description": "UniMas - San Francisco (KFSF)",
+    "Market": "San Francisco",
+    "Network": "UniMas",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20120124T235959Z"
+  }, {
+    "StationID": "KFXA",
+    "Description": "FOX - Cedar Rapids (KFXA)",
+    "Market": "Cedar Rapids",
+    "Network": "FOX",
+    "StartDate": "20151020T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KGAN",
+    "Description": "CBS - Cedar Rapids (KGAN)",
+    "Market": "Cedar Rapids",
+    "Network": "CBS",
+    "StartDate": "20151019T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KGO",
+    "Description": "ABC - San Francisco (KGO)",
+    "Market": "San Francisco",
+    "Network": "ABC",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KICU",
+    "Description": "KICU - San Francisco (KICU)",
+    "Market": "San Francisco",
+    "Network": "KICU",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20140603T235959Z"
+  }, {
+    "StationID": "KKPX",
+    "Description": "IonTV - San Francisco (KKPX)",
+    "Market": "San Francisco",
+    "Network": "IonTV",
+    "StartDate": "20100910T000000Z",
+    "EndDate": "20130821T235959Z"
+  }, {
+    "StationID": "KKTV",
+    "Description": "CBS - Colorado Springs (KKTV)",
+    "Market": "Colorado Springs",
+    "Network": "CBS",
+    "StartDate": "20160119T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "KLAS",
+    "Description": "CBS - Las Vegas (KLAS)",
+    "Market": "Las Vegas",
+    "Network": "CBS",
+    "StartDate": "20151210T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KMEG",
+    "Description": "CBS - Dakota Dunes SD (KMEG)",
+    "Market": "Dakota Dunes SD",
+    "Network": "CBS",
+    "StartDate": "20151013T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KMGH",
+    "Description": "ABC - Denver (KMGH)",
+    "Market": "Denver",
+    "Network": "ABC",
+    "StartDate": "20160101T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KMTP",
+    "Description": "KMTP - San Francisco (KMTP)",
+    "Market": "San Francisco",
+    "Network": "KMTP",
+    "StartDate": "20130710T000000Z",
+    "EndDate": "20160830T235959Z"
+  }, {
+    "StationID": "KNTV",
+    "Description": "NBC - San Francisco (KNTV)",
+    "Market": "San Francisco",
+    "Network": "NBC",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KNXV",
+    "Description": "ABC - Phoenix (KNXV)",
+    "Market": "Phoenix",
+    "Network": "ABC",
+    "StartDate": "20160807T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KOAA",
+    "Description": "NBC - Pueblo (KOAA)",
+    "Market": "Pueblo",
+    "Network": "NBC",
+    "StartDate": "20160119T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "KOFY",
+    "Description": "KOFY - San Francisco (KOFY)",
+    "Market": "San Francisco",
+    "Network": "KOFY",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KOLO",
+    "Description": "ABC - Reno (KOLO)",
+    "Market": "Reno",
+    "Network": "ABC",
+    "StartDate": "20160102T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KPHO",
+    "Description": "CBS - Phoenix (KPHO)",
+    "Market": "Phoenix",
+    "Network": "CBS",
+    "StartDate": "20160808T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KPIX",
+    "Description": "CBS - San Francisco (KPIX)",
+    "Market": "San Francisco",
+    "Network": "CBS",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KPNX",
+    "Description": "NBC - Phoenix (KPNX)",
+    "Market": "Phoenix",
+    "Network": "NBC",
+    "StartDate": "20160808T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KPTH",
+    "Description": "FOX - Dakota Dunes SD (KPTH)",
+    "Market": "Dakota Dunes SD",
+    "Network": "FOX",
+    "StartDate": "20151014T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KQED",
+    "Description": "PBS - San Francisco (KQED)",
+    "Market": "San Francisco",
+    "Network": "PBS",
+    "StartDate": "20100714T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KQEH",
+    "Description": "PBS - San Francisco (KQEH)",
+    "Market": "San Francisco",
+    "Network": "PBS",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20180226T235959Z"
+  }, {
+    "StationID": "KRCB",
+    "Description": "PBS - Sonoma California (KRCB)",
+    "Market": "Sonoma California",
+    "Network": "PBS",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20131003T235959Z"
+  }, {
+    "StationID": "KRDO",
+    "Description": "ABC - Colorado Springs (KRDO)",
+    "Market": "Colorado Springs",
+    "Network": "ABC",
+    "StartDate": "20160119T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "KRNV",
+    "Description": "NBC - Reno (KRNV)",
+    "Market": "Reno",
+    "Network": "NBC",
+    "StartDate": "20160102T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KRON",
+    "Description": "MyNetworkTV - San Francisco (KRON)",
+    "Market": "San Francisco",
+    "Network": "MyNetworkTV",
+    "StartDate": "20100714T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KRXI",
+    "Description": "FOX - Reno (KRXI)",
+    "Market": "Reno",
+    "Network": "FOX",
+    "StartDate": "20160101T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KSAZ",
+    "Description": "FOX - Phoenix (KSAZ)",
+    "Market": "Phoenix",
+    "Network": "FOX",
+    "StartDate": "20160808T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KSNV",
+    "Description": "MYTV - Las Vegas (KSNV)",
+    "Market": "Las Vegas",
+    "Network": "MYTV",
+    "StartDate": "20151211T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KSTS",
+    "Description": "Telemundo - San Francisco (KSTS)",
+    "Market": "San Francisco",
+    "Network": "Telemundo",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KTIV",
+    "Description": "NBC - Sioux City (KTIV)",
+    "Market": "Sioux City",
+    "Network": "NBC",
+    "StartDate": "20151013T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KTLN",
+    "Description": "KTLN - San Francisco (KTLN)",
+    "Market": "San Francisco",
+    "Network": "KTLN",
+    "StartDate": "20110921T000000Z",
+    "EndDate": "20131001T235959Z"
+  }, {
+    "StationID": "KTNC",
+    "Description": "EstrellaTV - San Francisco (KTNC)",
+    "Market": "San Francisco",
+    "Network": "EstrellaTV",
+    "StartDate": "20120711T000000Z",
+    "EndDate": "20140201T235959Z"
+  }, {
+    "StationID": "KTNV",
+    "Description": "ABC - Las Vegas (KTNV)",
+    "Market": "Las Vegas",
+    "Network": "ABC",
+    "StartDate": "20151211T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KTSF",
+    "Description": "KTSF - San Francisco (KTSF)",
+    "Market": "San Francisco",
+    "Network": "KTSF",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20171030T235959Z"
+  }, {
+    "StationID": "KTVN",
+    "Description": "CBS - Reno (KTVN)",
+    "Market": "Reno",
+    "Network": "CBS",
+    "StartDate": "20160102T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "KTVU",
+    "Description": "FOX - San Francisco (KTVU)",
+    "Market": "San Francisco",
+    "Network": "FOX",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "KUSA",
+    "Description": "NBC - Denver (KUSA)",
+    "Market": "Denver",
+    "Network": "NBC",
+    "StartDate": "20160101T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KVVU",
+    "Description": "FOX - Las Vegas (KVVU)",
+    "Market": "Las Vegas",
+    "Network": "FOX",
+    "StartDate": "20151212T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KWWL",
+    "Description": "NBC - Waterloo (KWWL)",
+    "Market": "Waterloo",
+    "Network": "NBC",
+    "StartDate": "20151019T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "KXRM",
+    "Description": "FOX - Colorado Springs (KXRM)",
+    "Market": "Colorado Springs",
+    "Network": "FOX",
+    "StartDate": "20160119T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "KYW",
+    "Description": "CBS - Philadelphia (KYW)",
+    "Market": "Philadelphia",
+    "Network": "CBS",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20180308T235959Z"
+  }, {
+    "StationID": "LINKTV",
+    "Description": "LinkTV",
+    "Market": "NationalSpecialty",
+    "Network": "LINKTV",
+    "StartDate": "20120220T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "MSNBC",
+    "Description": "MSNBC",
+    "Market": "National",
+    "Network": "MSNBC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "NHK",
+    "Description": "NHK - Japan (NHK)",
+    "Market": "Japan",
+    "Network": "NHK",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20171109T235959Z"
+  }, {
+    "StationID": "RT",
+    "Description": "Russia Today",
+    "Market": "International",
+    "Network": "RT",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "SFGTV",
+    "Description": "SFGOVTV - San Francisco (SFGTV)",
+    "Market": "San Francisco",
+    "Network": "SFGOVTV",
+    "StartDate": "20100715T000000Z",
+    "EndDate": "20180313T235959Z"
+  }, {
+    "StationID": "SFGTV2",
+    "Description": "SFGOVTV - San Francisco (SFGTV2)",
+    "Market": "San Francisco",
+    "Network": "SFGOVTV",
+    "StartDate": "20100716T000000Z",
+    "EndDate": "20131204T235959Z"
+  }, {
+    "StationID": "TBN",
+    "Description": "Trinity - Costa Mesa California (TBN)",
+    "Market": "Costa Mesa California",
+    "Network": "Trinity",
+    "StartDate": "20121019T000000Z",
+    "EndDate": "20121026T235959Z"
+  }, {
+    "StationID": "WABC",
+    "Description": "ABC - New York City (WABC)",
+    "Market": "New York City",
+    "Network": "ABC",
+    "StartDate": "20150731T000000Z",
+    "EndDate": "20160823T235959Z"
+  }, {
+    "StationID": "WACH",
+    "Description": "FOX - Columbia (WACH)",
+    "Market": "Columbia",
+    "Network": "FOX",
+    "StartDate": "20151229T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WAVY",
+    "Description": "NBC - Portsmouth (WAVY)",
+    "Market": "Portsmouth",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "WBAL",
+    "Description": "NBC - Baltimore (WBAL)",
+    "Market": "Baltimore",
+    "Network": "NBC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WBFF",
+    "Description": "FOX - Baltimore (WBFF)",
+    "Market": "Baltimore",
+    "Network": "FOX",
+    "StartDate": "20090703T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WBTV",
+    "Description": "CBS - Charlotte (WBTV)",
+    "Market": "Charlotte",
+    "Network": "CBS",
+    "StartDate": "20160209T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WBZ",
+    "Description": "CBS - Boston (WBZ)",
+    "Market": "Boston",
+    "Network": "CBS",
+    "StartDate": "20151002T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WCAU",
+    "Description": "NBC - Philadelphia (WCAU)",
+    "Market": "Philadelphia",
+    "Network": "NBC",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20180308T235959Z"
+  }, {
+    "StationID": "WCBS",
+    "Description": "CBS - New York City (WCBS)",
+    "Market": "New York City",
+    "Network": "CBS",
+    "StartDate": "20150731T000000Z",
+    "EndDate": "20160824T235959Z"
+  }, {
+    "StationID": "WCNC",
+    "Description": "NBC - Charlotte (WCNC)",
+    "Market": "Charlotte",
+    "Network": "NBC",
+    "StartDate": "20160209T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WCPO",
+    "Description": "ABC - Cincinnati (WCPO)",
+    "Market": "Cincinnati",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WCVB",
+    "Description": "ABC - Boston (WCVB)",
+    "Market": "Boston",
+    "Network": "ABC",
+    "StartDate": "20151002T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WDBJ",
+    "Description": "CBS - Roanoke (WDBJ)",
+    "Market": "Roanoke",
+    "Network": "CBS",
+    "StartDate": "20160126T000000Z",
+    "EndDate": "20160301T235959Z"
+  }, {
+    "StationID": "WDJT",
+    "Description": "Daystar - Toledo (WDJT)",
+    "Market": "Toledo",
+    "Network": "Daystar",
+    "StartDate": "20160807T000000Z",
+    "EndDate": "20161215T235959Z"
+  }, {
+    "StationID": "WESH",
+    "Description": "NBC - Daytona Beach (WESH)",
+    "Market": "Daytona Beach",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WETA",
+    "Description": "PBS - Washington DC (WETA)",
+    "Market": "Washington DC",
+    "Network": "PBS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WEWS",
+    "Description": "ABC - Cleveland (WEWS)",
+    "Market": "Cleveland",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WFDC",
+    "Description": "Univision - Arlington Virginia (WFDC)",
+    "Market": "Arlington Virginia",
+    "Network": "Univision",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WFLA",
+    "Description": "NBC - Tampa (WFLA)",
+    "Market": "Tampa",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WFOR",
+    "Description": "CBS - Miami (WFOR)",
+    "Market": "Miami",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WFTS",
+    "Description": "ABC - Tampa (WFTS)",
+    "Market": "Tampa",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WFTV",
+    "Description": "ABC - Orlando (WFTV)",
+    "Market": "Orlando",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WFXR",
+    "Description": "FOX - Roanoke (WFXR)",
+    "Market": "Roanoke",
+    "Network": "FOX",
+    "StartDate": "20160127T000000Z",
+    "EndDate": "20160301T235959Z"
+  }, {
+    "StationID": "WFXT",
+    "Description": "FOX - Boston (WFXT)",
+    "Market": "Boston",
+    "Network": "FOX",
+    "StartDate": "20151002T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WGN",
+    "Description": "CW - Chicago (WGN)",
+    "Market": "Chicago",
+    "Network": "CW",
+    "StartDate": "20100613T000000Z",
+    "EndDate": "20150506T235959Z"
+  }, {
+    "StationID": "WHDH",
+    "Description": "NBC - Boston (WHDH)",
+    "Market": "Boston",
+    "Network": "NBC",
+    "StartDate": "20151002T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WHNS",
+    "Description": "FOX - Greenville (WHNS)",
+    "Market": "Greenville",
+    "Network": "FOX",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WHO",
+    "Description": "NBC - Des Moines (WHO)",
+    "Market": "Des Moines",
+    "Network": "NBC",
+    "StartDate": "20151014T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WHUT",
+    "Description": "PBS - Washington DC (WHUT)",
+    "Market": "Washington DC",
+    "Network": "PBS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WHYY",
+    "Description": "PBS - Philadelphia (WHYY)",
+    "Market": "Philadelphia",
+    "Network": "PBS",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20150125T235959Z"
+  }, {
+    "StationID": "WIS",
+    "Description": "NBC - Columbia (WIS)",
+    "Market": "Columbia",
+    "Network": "NBC",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WISN",
+    "Description": "ABC - Milwaukee (WISN)",
+    "Market": "Milwaukee",
+    "Network": "ABC",
+    "StartDate": "20160807T000000Z",
+    "EndDate": "20161215T235959Z"
+  }, {
+    "StationID": "WITI",
+    "Description": "FOX - Milwaukee (WITI)",
+    "Market": "Milwaukee",
+    "Network": "FOX",
+    "StartDate": "20160808T000000Z",
+    "EndDate": "20161215T235959Z"
+  }, {
+    "StationID": "WJLA",
+    "Description": "ABC - Washington DC (WJLA)",
+    "Market": "Washington DC",
+    "Network": "ABC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180112T235959Z"
+  }, {
+    "StationID": "WJW",
+    "Description": "FOX - Cleveland (WJW)",
+    "Market": "Cleveland",
+    "Network": "FOX",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WJZ",
+    "Description": "CBS - Baltimore (WJZ)",
+    "Market": "Baltimore",
+    "Network": "CBS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WJZY",
+    "Description": "FOX - Belmont (WJZY)",
+    "Market": "Belmont",
+    "Network": "FOX",
+    "StartDate": "20160209T000000Z",
+    "EndDate": "20160322T235959Z"
+  }, {
+    "StationID": "WKMG",
+    "Description": "CBS - Orlando (WKMG)",
+    "Market": "Orlando",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WKRC",
+    "Description": "CBS - Cincinnati (WKRC)",
+    "Market": "Cincinnati",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WKYC",
+    "Description": "NBC - Cleveland (WKYC)",
+    "Market": "Cleveland",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WLFL",
+    "Description": "CW - Raleigh (WLFL)",
+    "Market": "Raleigh",
+    "Network": "CW",
+    "StartDate": "20160806T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WLOS",
+    "Description": "ABC - Asheville (WLOS)",
+    "Market": "Asheville",
+    "Network": "ABC",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WLTX",
+    "Description": "CBS - Columbia (WLTX)",
+    "Market": "Columbia",
+    "Network": "CBS",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WLWT",
+    "Description": "NBC - Cincinnati (WLWT)",
+    "Market": "Cincinnati",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WMAR",
+    "Description": "ABC - Baltimore (WMAR)",
+    "Market": "Baltimore",
+    "Network": "ABC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WMPT",
+    "Description": "PBS - Maryland (WMPT)",
+    "Market": "Maryland",
+    "Network": "PBS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WMUR",
+    "Description": "ABC - Boston (WMUR)",
+    "Market": "Boston",
+    "Network": "ABC",
+    "StartDate": "20150930T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WNBC",
+    "Description": "NBC - New York City (WNBC)",
+    "Market": "New York City",
+    "Network": "NBC",
+    "StartDate": "20150731T000000Z",
+    "EndDate": "20160823T235959Z"
+  }, {
+    "StationID": "WNCN",
+    "Description": "NBC - Goldsboro (WNCN)",
+    "Market": "Goldsboro",
+    "Network": "NBC",
+    "StartDate": "20160113T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WNUV",
+    "Description": "CW - Baltimore (WNUV)",
+    "Market": "Baltimore",
+    "Network": "CW",
+    "StartDate": "20090712T000000Z",
+    "EndDate": "20131110T235959Z"
+  }, {
+    "StationID": "WNYW",
+    "Description": "FOX - New York City (WNYW)",
+    "Market": "New York City",
+    "Network": "FOX",
+    "StartDate": "20150731T000000Z",
+    "EndDate": "20160823T235959Z"
+  }, {
+    "StationID": "WOFL",
+    "Description": "FOX - Orlando (WOFL)",
+    "Market": "Orlando",
+    "Network": "FOX",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WOI",
+    "Description": "ABC - Ames (WOI)",
+    "Market": "Ames",
+    "Network": "ABC",
+    "StartDate": "20151014T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WOIO",
+    "Description": "CBS - Shaker Heights (WOIO)",
+    "Market": "Shaker Heights",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WOLO",
+    "Description": "ABC - Columbia (WOLO)",
+    "Market": "Columbia",
+    "Network": "ABC",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WPHL",
+    "Description": "MyNetworkTV - Philadelphia (WPHL)",
+    "Market": "Philadelphia",
+    "Network": "MyNetworkTV",
+    "StartDate": "20140904T000000Z",
+    "EndDate": "20150126T235959Z"
+  }, {
+    "StationID": "WPLG",
+    "Description": "ABC - Miami (WPLG)",
+    "Market": "Miami",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WPSG",
+    "Description": "CW - Philadelphia (WPSG)",
+    "Market": "Philadelphia",
+    "Network": "CW",
+    "StartDate": "20140904T000000Z",
+    "EndDate": "20150126T235959Z"
+  }, {
+    "StationID": "WPVI",
+    "Description": "ABC - Philadelphia (WPVI)",
+    "Market": "Philadelphia",
+    "Network": "ABC",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20180308T235959Z"
+  }, {
+    "StationID": "WQAW",
+    "Description": "Azteca - Lake Shore Maryland (WQAW)",
+    "Market": "Lake Shore Maryland",
+    "Network": "Azteca",
+    "StartDate": "20130207T000000Z",
+    "EndDate": "20131115T235959Z"
+  }, {
+    "StationID": "WRAL",
+    "Description": "CBS - Raleigh (WRAL)",
+    "Market": "Raleigh",
+    "Network": "CBS",
+    "StartDate": "20160113T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WRAZ",
+    "Description": "FOX - Raleigh (WRAZ)",
+    "Market": "Raleigh",
+    "Network": "FOX",
+    "StartDate": "20160113T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WRC",
+    "Description": "NBC - Washington DC (WRC)",
+    "Market": "Washington DC",
+    "Network": "NBC",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180112T235959Z"
+  }, {
+    "StationID": "WSET",
+    "Description": "ABC - Lynchburg (WSET)",
+    "Market": "Lynchburg",
+    "Network": "ABC",
+    "StartDate": "20160126T000000Z",
+    "EndDate": "20160301T235959Z"
+  }, {
+    "StationID": "WSLS",
+    "Description": "NBC - Roanoke (WSLS)",
+    "Market": "Roanoke",
+    "Network": "NBC",
+    "StartDate": "20160126T000000Z",
+    "EndDate": "20160301T235959Z"
+  }, {
+    "StationID": "WSOC",
+    "Description": "ABC - Charlotte (WSOC)",
+    "Market": "Charlotte",
+    "Network": "ABC",
+    "StartDate": "20160209T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WSPA",
+    "Description": "CBS - Spartanburg (WSPA)",
+    "Market": "Spartanburg",
+    "Network": "CBS",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WSVN",
+    "Description": "FOX - Miami (WSVN)",
+    "Market": "Miami",
+    "Network": "FOX",
+    "StartDate": "20160107T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WTKR",
+    "Description": "CBS - Norfolk (WTKR)",
+    "Market": "Norfolk",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "WTMJ",
+    "Description": "NBC - Milwaukee (WTMJ)",
+    "Market": "Milwaukee",
+    "Network": "NBC",
+    "StartDate": "20160807T000000Z",
+    "EndDate": "20161215T235959Z"
+  }, {
+    "StationID": "WTSP",
+    "Description": "CBS - St. Petersburg (WTSP)",
+    "Market": "St. Petersburg",
+    "Network": "CBS",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WTTG",
+    "Description": "FOX - Washington DC (WTTG)",
+    "Market": "Washington DC",
+    "Network": "FOX",
+    "StartDate": "20090703T000000Z",
+    "EndDate": "20180113T235959Z"
+  }, {
+    "StationID": "WTVD",
+    "Description": "ABC - Durham (WTVD)",
+    "Market": "Durham",
+    "Network": "ABC",
+    "StartDate": "20160113T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WTVJ",
+    "Description": "NBC - Miami (WTVJ)",
+    "Market": "Miami",
+    "Network": "NBC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WTVT",
+    "Description": "FOX - Tampa (WTVT)",
+    "Market": "Tampa",
+    "Network": "FOX",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20161202T235959Z"
+  }, {
+    "StationID": "WTXF",
+    "Description": "FOX - Philadelphia (WTXF)",
+    "Market": "Philadelphia",
+    "Network": "FOX",
+    "StartDate": "20140606T000000Z",
+    "EndDate": "20180308T235959Z"
+  }, {
+    "StationID": "WUSA",
+    "Description": "CBS - Washington DC (WUSA)",
+    "Market": "Washington DC",
+    "Network": "CBS",
+    "StartDate": "20090702T000000Z",
+    "EndDate": "20180113T235959Z"
+  }, {
+    "StationID": "WUVP",
+    "Description": "Univision - Philadelphia (WUVP)",
+    "Market": "Philadelphia",
+    "Network": "Univision",
+    "StartDate": "20140608T000000Z",
+    "EndDate": "20180308T235959Z"
+  }, {
+    "StationID": "WVBT",
+    "Description": "FOX - Virginia Beach (WVBT)",
+    "Market": "Virginia Beach",
+    "Network": "FOX",
+    "StartDate": "20160107T000000Z",
+    "EndDate": "20160308T235959Z"
+  }, {
+    "StationID": "WVEC",
+    "Description": "ABC - Hampton (WVEC)",
+    "Market": "Hampton",
+    "Network": "ABC",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160309T235959Z"
+  }, {
+    "StationID": "WXIX",
+    "Description": "FOX - Newport KY (WXIX)",
+    "Market": "Newport KY",
+    "Network": "FOX",
+    "StartDate": "20160106T000000Z",
+    "EndDate": "20160323T235959Z"
+  }, {
+    "StationID": "WYFF",
+    "Description": "NBC - Greenville (WYFF)",
+    "Market": "Greenville",
+    "Network": "NBC",
+    "StartDate": "20151228T000000Z",
+    "EndDate": "20160302T235959Z"
+  }, {
+    "StationID": "WZDC",
+    "Description": "Telemundo - Washington DC (WZDC)",
+    "Market": "Washington DC",
+    "Network": "Telemundo",
+    "StartDate": "20110404T000000Z",
+    "EndDate": "20131114T235959Z"
+  }]
+}

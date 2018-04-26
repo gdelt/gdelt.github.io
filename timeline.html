@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/dc.css">
+  <script type="text/javascript" src="js/d3.min.js"></script>
+  <script type="text/javascript" src="js/crossfilter.min.js"></script>
+  <script type="text/javascript" src="js/dc.js"></script>
+  <script type="text/javascript" src="js/science.v1.min.js"></script>
+  <script type="text/javascript" src="js/loess.js"></script>
+
+  <style>
+    div { display: inline; }
+    .dc-chart g.row text {fill: black; font-size: 16px;}
+    .dc-legend-item text {font-size: 14px;}
+    #data_lnk { position: fixed !important; top: 5px !important; right: 5px !important; z-index: 998; }
+    .data_link { position: block; z-index: 999; font-size: 10px; padding-left: 2px;}
+  </style>
+
+</head>
+<body>
+
+  <div id="series-chart"></div>
+  <div id="row-chart"></div>
+  <span id="data_lnk"></span>
+
+  <script>
+
+var $ = window.parent.$;
+var loess = science.stats.loess();
+var yaxislab = "Proportional volume (%)";
+if(window.parent.query.timelinemode == 'TimelineTone') { yaxislab = "Average tone"; }
+var datasets = window.parent.datasets;
+
+// reformat GDELT json for crossfilter
+function format_gdelt(x) {
+  var out = [];
+  var k = Object.keys(x);
+  for(var i=0; i<k.length; i++) {
+    var d = x[k[i]].data.timeline[0].data;
+    grpsizes[k[i]] = d.length;
+    for(var j=0; j<d.length; j++) {
+      var ds = d[j].date; // date string
+      var dt = ds.substr(0,4) +'-'+ ds.substr(4,2) +'-'+ ds.substr(6,5) +':'+ ds.substr(11,2) +':'+ ds.substr(13,3);
+      var p = { "name": k[i], "date": new Date(dt), "value": d[j].value };
+      out.push(p);
+    }
+  }
+  return out;
+}
+
+var grpsizes = {};
+var gdelt = format_gdelt(datasets);
+var dat = crossfilter(gdelt);
+var n = Object.keys(gdelt).length;
+
+var mindate = new Date("2050-01-10T00:00:00Z"),
+    maxdate = new Date("1900-01-10T00:00:00Z");
+
+var xvals = [], yvals = [];
+
+for(var i=0; i<gdelt.length; i++) {
+  xvals.push(gdelt[i].date);
+  yvals.push(gdelt[i].value);
+  if(gdelt[i].date < mindate) { mindate = gdelt[i].date }
+  if(gdelt[i].date > maxdate) { maxdate = gdelt[i].date }
+}
+
+loess.bandwidth(.5);
+var yvals_smooth = loess(xvals, yvals);
+
+var typeSeriesDimension = dat.dimension(function(d){ return [d.name, d.date]; });
+var totalGroup = typeSeriesDimension.group().reduceSum(function(d){ return d.value; });
+var typeDimension2 = dat.dimension(function(d){ return d.name });
+var typeGroupTotal = typeDimension2.group().reduceSum(function(d){ return d.value / grpsizes[d.name]; });
+
+
+function plot() {
+
+  var w = window.innerWidth * .98;
+  var h = window.innerHeight * .98;
+  var h_bars = 0.075 + (Object.keys(grpsizes).length * .033);
+  var h_sers = 1 - h_bars;
+
+  dc.seriesChart("#series-chart")
+      .chart(function(c) { return dc.lineChart(c); }) // lineChart / scatterPlot / .interpolate('cardinal')
+      .width(w)
+      .height(h * h_sers)
+      .x(d3.time.scale().domain([mindate, maxdate]))
+      .yAxisLabel(yaxislab)
+      .clipPadding(10)
+      .elasticY(true)
+      .dimension(typeSeriesDimension)
+      .group(totalGroup)
+      .seriesAccessor(function(d) {return d.key[0];})
+      .keyAccessor(function(d) {return d.key[1];})
+      .valueAccessor(function(d) {return d.value;})
+      .legend(dc.legend().x(w * .8).y(10).itemHeight(23).gap(5));
+
+  dc.rowChart('#row-chart')
+      .width(w)
+      .height(h * h_bars)
+      .dimension(typeDimension2)
+      .group(typeGroupTotal);
+
+  dc.renderAll();
+}
+
+plot();
+
+var resize_timeout = null;
+
+$( window ).resize(function() {
+  clearTimeout(resize_timeout);
+  resize_timeout = setTimeout(function () {
+    plot();
+  }, 500);
+});
+
+// creates link to download comparative data
+var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(datasets));
+var jsonlink = document.getElementById('data_lnk');
+jsonlink.insertAdjacentHTML('beforeend', '<a class="data_link" href="data:' + data + '" download="data.json">JSON </a>');
+
+// build csv string
+var datakeys = Object.keys(datasets);
+var csv = "data:text/csv;charset=utf-8," + 'query,url,\r\n';
+for(var i=0; i<datakeys.length; i++) { csv += datakeys[i] + ',' + datasets[datakeys[i]].url + ',\r\n' }
+csv += '\r\nquery,date,value\r\n';
+for(var i=0; i<datakeys.length; i++) {
+  var n = datakeys[i];
+  var d = datasets[n].data.timeline[0].data;
+  for(var j=0; j<d.length; j++) { csv = csv + n + ',' + d[j].date + ',' + d[j].value + '\r\n'; }
+}
+var encodedUri = encodeURI(csv);
+jsonlink.insertAdjacentHTML('beforeend', '<a class="data_link" href="javascript:window.open(encodedUri)"> CSV</a>');
+
+  </script>
+</body>
+</html>

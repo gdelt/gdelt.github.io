@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <style>
+    .mainRow { max-height: 75vh; }
+    div.topRow { display: flex; flex-wrap: wrap; }
+    .station:nth-of-type(odd) { background: #f5f5f5; }
+    h3, h4 { text-align: center; margin: 15px 5px 5px 5px; }
+    h3 { color: cyan; background-color: #555; font-size: 18px; }
+    h4 { font-size: 14px; }
+    p { margin: 0px 0px 0px 5px; line-height: 90%; font-size: 14px; }
+  </style>
+
+</head>
+<body>
+  <div id="main" class="container-fluid"></div>
+
+  <script>
+
+var api_url = window.parent.API_URL;
+
+function array_to_ul(x, sep1='', sep2='') {
+  var item = '';
+  $.each(x, function(i, e) { item += '<p>' + sep1 + e + sep2 + '</p>'; });
+  return item ;
+}
+
+$.ajax({
+  url: api_url,
+  type: 'GET',
+  dataType: 'json',
+  error: function(err) { console.log(err); },
+  success: function(dat) {
+    d = dat;
+
+    var body = '<div class="row">\
+  <div class="col-6">\
+    <h3>TRENDING</h3>\
+  </div>\
+  <div class="col-6">\
+    <h3>TOP PHRASES</h3>\
+  </div>\
+</div>';
+    body += '<div class="row">';
+      body += '<div class="col-6 topRow"> ' + array_to_ul(d.OverallTrendingTopics, sep2='• ') + '</div>';
+      body += '<div class="col-6 topRow"> ' + array_to_ul(d.OverallTrendingPhrases, sep2='• ') + '</div>';
+    body += '</div><br>';
+
+    body += '<div class="row mainRow">';
+    for(var i=0; i<d.StationTrendingTopics.length; i++){
+      if(d.StationTrendingTopics[i].Station == 'FBC') continue;
+      body += '<div class="station col-2"> <h3>' + d.StationTrendingTopics[i].Station + '</h3>';
+      body += '<h4><em><b>trending</b></em></h4>' + array_to_ul(d.StationTrendingTopics[i].Topics, sep1='• ');
+      body += '<h4><em><b>top topics</b></em></h4>' + array_to_ul(d.StationTopTopics[i].Topics, sep1='• ') + '</div>';
+    }
+    body += '</div>';
+
+    $("#main").append(body);
+    console.log('end');
+  },
+});
+
+  </script>
+</body>
+</html>

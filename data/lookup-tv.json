@@ -1,0 +1,19 @@
+[{
+  "code": "TimelineVol",
+  "name": "RELATIVE VOLUME - matching results as a proportion of total airtime"
+}, {
+  "code": "TimelineVolNorm",
+  "name": "ABSOLUTE VOLUME - matcing result counts"
+}, {
+  "code": "ClipGallery",
+  "name": "CLIP GALLERY - up to 50 most relevant clips matching your search"
+}, {
+  "code": "StationChart",
+  "name": "STATION CHART - matching results by station over the selected time period"
+}, {
+  "code": "TrendingTopics",
+  "name": "TRENDING TOPICS - the most common trending topics"
+}, {
+  "code": "WordCloud",
+  "name": "WORDCLOUD - top words that appear most frequently in clips matching your search"
+}]
