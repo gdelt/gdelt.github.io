@@ -18,7 +18,7 @@ function c(x) { return JSON.parse(JSON.stringify(x)); } // deep copy (clone)
 
 // Time/date globals
 var end_date = moment(new Date());
-var start_date = end_date.clone().subtract(365, 'days');
+var start_date = moment("2017-01-01 0:00 +0000", "YYYY-MM-DD HH:mm Z");
 var dtft = 'DD-MMM-YYYY'; // date format
 
 // COMPARE analysis globals
