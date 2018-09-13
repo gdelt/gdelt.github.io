@@ -234,6 +234,8 @@ document.getElementById('trans').checked = query.trans;
 // checkbox event handlers
 function checkboxDomain() { update_query('domainis', !query.domainis); }
 function checkboxTrans() { update_query('trans', !query.trans); } // translate non-English content
+function checkboxImageBool() { action_query(); } // Image tag boolean option
+function checkboxThemeBool() { action_query(); } // Theme tag boolean option
 
 // select relevant tab if not 'CONTENT'
 if(init_argset_keys){

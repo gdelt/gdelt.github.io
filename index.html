@@ -98,9 +98,15 @@ e.g. "cats and dogs"; OR in parentheses e.g. (cats OR dogs)'>
       <!-- IMAGE TAB -->
       <div id="tab_image" class="inputTab">
         <div class="row col-12">
-          <div class="col-12">
+          <div class="col-11">
             <label for="imagetag">Image&nbsp;tags</label>
             <select class="form-control pickerSelectClass dd_opt" type="text" id="imagetag"></select>
+          </div>
+          <div class="col-1">
+            <label id="imagetag_bool_lab" for="imagetag_bool" title="Multiple tags are OR by default
+Tick to override as AND">and</label>
+            <input id="imagetag_bool" name="imagetag_bool" type="checkbox" onchange="checkboxImageBool()" title="Multiple tags are OR by default
+Tick to override as AND"/>
           </div>
         </div>
       </div>
@@ -108,9 +114,15 @@ e.g. "cats and dogs"; OR in parentheses e.g. (cats OR dogs)'>
       <!-- THEME TAB -->
       <div id="tab_theme" class="inputTab">
         <div class="row col-12">
-          <div class="col-12">
+          <div class="col-11">
             <label for="theme">Themes</label>
             <select class="form-control pickerSelectClass dd_opt" type="text" id="theme"></select>
+          </div>
+          <div class="col-1">
+            <label id="theme_bool_lab" for="theme_bool" title="Multiple tags are OR by default
+Tick to override as AND">and</label>
+            <input id="theme_bool" name="theme_bool" type="checkbox" value="yes" onchange="checkboxThemeBool()" title="Multiple tags are OR by default
+Tick to override as AND"/>
           </div>
         </div>
       </div>

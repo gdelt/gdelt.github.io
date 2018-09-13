@@ -147,6 +147,8 @@ function api_call(k) {
       var signs = [];      // logical array of arguments' mathematical signs
       for(var j=0; j<val.length; j++) { signs.push( val[j].substr(0,1) == '-' ); }
       var all_neg = signs.every(function(x) { return x; }); // returns true if all array items are true
+      if(key == 'imagetag') { if($('#imagetag_bool').is(":checked")) all_neg = true;} // manual AND selection for image/theme tags
+      if(key == 'theme') { if($('#theme_bool').is(":checked")) all_neg = true;}       //  as above
       if(all_neg){ // interpret all negs with AND (i.e. sep '%20' or '&')
         for(var j=0; j<val.length; j++) { call += sep + format_arg(key, val[j], sig); }
       } else {     // interpret all pos with OR (assuming all positive as mixing pos/neg args with AND/OR makes no sense)
