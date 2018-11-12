@@ -117,6 +117,7 @@ function build_hash() {
 function format_arg(k, v, sig) {
   // special cases that need argument in double quotes
   if(k == 'imagetag' || k == 'location') { v = '%22' + v + '%22'; }
+  if(k == 'domain') { return 'domain:.' + v + '%20OR%20domainis:' + v; }
   if(v.substr(0,1) == '-') { return '-' + k + sig + v.substr(1); }
   return k + sig + v;
 }
@@ -142,7 +143,8 @@ function api_call(k) {
 
     if(val.length == 1){   // single argument case
       if(key == 'context') { val[0] = '"' + val[0] + '"'; } // TV API context arguments require quotes
-      call += sep + format_arg(key, val[0], sig);
+      if(key == 'domain') { call += sep + '(' + format_arg(key, val[0], sig) + ')';   // domain is complex query due to API quirk
+      } else { call += sep + format_arg(key, val[0], sig); }
     } else {               // multiple arguments
       var signs = [];      // logical array of arguments' mathematical signs
       for(var j=0; j<val.length; j++) { signs.push( val[j].substr(0,1) == '-' ); }
