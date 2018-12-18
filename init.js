@@ -162,7 +162,7 @@ function api_call(k) {
   }
 
   if(VERBOSE) clog('api_call ' + call);
-  // call = 'https://api.gdeltproject.org/api/v2/doc/doc?query=trump&contentmode=ArtList&maxrecords=5&timespan=1w';
+  if(call.indexOf('mode=Timeline') > 0) call += '&timezoom=yes'; // timezoom arg doesn't currently work in app, but does in opened links
   return call;
 }
 
