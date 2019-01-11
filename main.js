@@ -105,7 +105,7 @@ if(window.location.hash != ''){
       if(['startdatetime','enddatetime'].indexOf(id) == -1){
         if(['trans','domainis'].indexOf(id) > -1){
           document.getElementById(id).checked = query[id];         // checkboxes
-        } else { document.getElementById(id).value = query[id]; }  // text inputs
+        } else { if(id != 'timezoom') document.getElementById(id).value = query[id]; }  // text inputs
       }
       if(id == 'maxrecords') document.getElementById('maxrecordslab').innerHTML = init_argset[id];
       if(id == 'timelinesmooth') document.getElementById('timelinesmoothlab').innerHTML = init_argset[id];
