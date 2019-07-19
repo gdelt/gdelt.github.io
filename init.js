@@ -266,4 +266,12 @@ function hash(){
   if(VERBOSE) clog('hash parsed');
 }
 
+function copyApiCall(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($("#gdelt_api_call").text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
 hash();

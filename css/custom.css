@@ -58,11 +58,26 @@ html,body {
   border:none;
 }
 
+.helpbutton, .zoombutton{
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.helpbutton:hover, .zoombutton:hover {
+  color: cyan;
+  outline: none;
+}
+
+#copybutton:hover {
+  color: white;
+}
+
 /*--------------------------------------------------------------------------*/
 
 #side_panel {
-  border: 2px solid #555;
-  background-color: #555;
+  border: 2px solid #5C6166;
+  background-color: #5C6166;
   padding: 10px;
   overflow-y: scroll;
 }
@@ -283,9 +298,8 @@ a:hover { color: cyan;}
   background-color: cyan !important;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Glyphicons Halflings';
-
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
@@ -316,7 +330,7 @@ a:hover { color: cyan;}
   height: 30px;
   margin-top: -10px;
   font-size: 30px;
-}
+} */
 
 /*--------------------------------------------------------*/
 
@@ -335,6 +349,9 @@ a:hover { color: cyan;}
 
 #main_panel_title_row {
   min-height: 50px !important;
+  background-color: #C2C3C5;
+  border-bottom: solid #5C6166;
+  border-width: thin;
   color: #444;
   display: table;
 }
@@ -436,9 +453,7 @@ a:hover { color: cyan;}
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background: #666;
-    /* outline: solid red; */
-    /* opacity: .8; */
+    background: #888;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
@@ -465,6 +480,9 @@ a:hover { color: cyan;}
     cursor: pointer;
 }
 
+.slider::-moz-range-progress {
+  background: cyan;
+}
 
 
 html, body {

@@ -42,14 +42,14 @@
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="./">GDELT Project Interface</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <a class="navbar-brand" href="./" style="font-size: 1.5em;"><i class="fa fa-globe-americas glyphicon glyphicon-globe-americas fa-lg"></i><i class="fa fa-globe-africa glyphicon glyphicon-globe-africa fa-lg"></i><i class="fa fa-globe-asia glyphicon glyphicon-globe-asia fa-lg"></i> &nbsp; GDELT Project Interface</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
   <div style="position: absolute; right: 5px;">
-    <button class='helpbutton' type="button" data-target="#helpModal" data-toggle="modal" style="float: right; margin-right: 5px;">Help</button>
-    <button class='zoombutton' type="button" onclick="iframe_zoom(1)" style="float: right; margin-right: 5px; width: 30px">+</button>
-    <button class='zoombutton' type="button" onclick="iframe_zoom(0)" style="float: right; margin-right: 5px; width: 30px">-</button>
+    <button class='helpbutton btn-link' type="button" data-target="#helpModal" data-toggle="modal" style="float: right; margin-right: 5px;"><i class="fa fa-info-circle glyphicon glyphicon-info-circle fa-lg" title="How to use this site"></i></button>
+    <button class='zoombutton btn-link' type="button" onclick="iframe_zoom(1)" style="float: right; margin-right: 5px; width: 30px"><i class="fa fa-search-plus glyphicon glyphicon-search-plus fa-lg" title="Increase font size of results pane"></i></button>
+    <button class='zoombutton btn-link' type="button" onclick="iframe_zoom(0)" style="float: right; margin-right: 5px; width: 30px"><i class="fa fa-search-minus glyphicon glyphicon-search-minus fa-lg" title="Reduce font size of results pane"></i></button>
   </div>
 </nav>
 
@@ -60,9 +60,7 @@
     <div class="col-md-4 col-sm-12" id="side_panel">
     <p style="line-height: 100%; display: block; padding-top: 4px;">
       <a href="https://www.gdeltproject.org/" target="_blank">GDELT</a>
-      is the <em>Global Database of Events, Language and Tone</em>, a multilingual web platform offering powerful search tools. This page is an interface to some GDELT APIs but has has no affiliation. See Help for a quick guide. 
-      <a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_blank">API documentation.</a>
-    </p>
+      is the <em>Global Database of Events, Language and Tone</em>, a multilingual search and analytical project for researching press and media reporting. See <i class="fa fa-info-circle glyphicon glyphicon-info-circle fa-sm" title="Click help icon in the top-right"></i> for a quick guide.</p>
     <hr />
       <!-- INPUT TABS -->
       <div class="row tab col-12">
@@ -305,19 +303,19 @@ which must be matched in the same 15s clip as the positive
       </div>
 
       <hr>
-      <div class="row col-12"><a id="gdelt_api_call" target='_blank'></a></div>
-      <!-- <div class="row col-12"><a id="data_link" target='_blank'></a></div> -->
+      <div class="row col-12">
+        <a id="gdelt_api_call" class="col-11 inline-block" target='_blank'></a>
+        <button type="button" class="col-1 inline-block btn-link" onclick="copyApiCall()" style="border: none; padding: 1px; color:cyan;"><i id="copybutton" class="fa fa-clipboard glyphicon glyphicon-clipboard fa-sm" title="Copy URL link"></i></button>
+      </div>
+
     </div>  <!-- END SIDE-PANEL DIV -->
 
     <!-- MAIN PANEL DIV -->
     <div id="main_panel" class="col-md-8 col-sm-12 intrinsic-container intrinsic-container-16x9">
 
       <div id='main_panel_title_row' class="row col-12">
-        <h3 id='iframe_title' class='col-12'>[ ]</h3>
-        <!-- <div id='buttons_box' class='col-1'>
-          <button class='zoombutton' type="button" onclick="iframe_zoom(0)">-</button>
-          <button class='zoombutton' type="button" onclick="iframe_zoom(1)">+</button>
-        </div> -->
+          <i class="fa fa-search glyphicon glyphicon-search fa-lg" style='position: in-line; float:left; padding-top: 21px; padding-left: 5px;'></i>
+        <h3 id='iframe_title' style='position: in-line; float:left; padding-top:10px; padding-left: 10px;'>[ ]</h3>
         
       </div>
       <div id='iframe_container' class="row col-12">
@@ -341,7 +339,8 @@ which must be matched in the same 15s clip as the positive
 
       <!-- Modal body -->
       <div class="modal-body">
-        <b>With GDELT you can:</b>
+        <p>This site has no affiliated with GDELT (<a href="https://gdeltproject.org" target="_BLANK">gdeltproject.org</a>), but does provide an interface to some of its data services - specifically its <a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_BLANK">DOC</a>, <a href="https://blog.gdeltproject.org/gdelt-geo-2-0-api-debuts/" target="_BLANK">GEO</a> and <a href="https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/" target="_BLANK">Television</a> APIs. These services should not be confused with the <i>GDELT Events</i> databases to which "GDELT" is most closely associated by some, although they are related. </p>
+        <p>Using this site you can do things like:</b></p>
         <ul>
           <li> search in English for global content in any or all languages on a particular topic </li>
           <li> search for specific content or published in the past hour from eg. Japan, or in Japanese, or referencing a Japanese location </li>
@@ -350,13 +349,13 @@ which must be matched in the same 15s clip as the positive
         </ul>
         <b> QUERY DEFINITION </b>
         <ul>
-          <li> <b>Search term</b> - any work or phrase in English (GDELT matches these against English translations of non-English content). Phrases should be in double quotes. Spaces outside quotes are interpreted as AND. You can also search for <a href='https://gdelt.github.io/#api=geo&query=(missile OR nuclear)&geolocationcc=KN&geomode=PointData&geotimespan=7d' target='_blank'>'(x OR y)'</a>.  There are also two powerful special search functions that can help to find the right content:
+          <li> <b>Search term</b> - any work or phrase in English (GDELT matches these against English translations of non-English content). Phrases should be in "double quotes". Spaces outside quotes are interpreted as AND. Boolean is supported, so you can search for <a href='./#api=geo&query=(missile OR nuclear)&geolocationcc=KN&geomode=PointData&geotimespan=7d' target='_blank'>'(x OR y)'</a> or <a href='./#api=doc&query="World Cup" -football&sourcelang=eng&contentmode=ArtList&maxrecords=75&timespan=1m' target='_blank'>'x -y' (NOT y)</a>.  There are also two powerful special search functions that can help to find the right content:
             <ul>
-              <li> <b>near:</b> articles that feature two words within <i>n</i> words of each other - e.g. <pre>near5:"climate emergency"</pre> </li>
-              <li> <b>repeat:</b> articles that feature a word a minimum of <i>n</i> times (max 5) - e.g. <pre>repeat3:"climate"</pre> </li>
+              <li> <b>near:</b> articles that feature two words within <i>n</i> words of each other - e.g. <b>near5:"climate emergency"</b> <a href='./#api=doc&query=near5:"climate emergency"&timelinemode=TimelineVol&timelinesmooth=0&timespan=1w' target="_BLANK">(example)</a> </li>
+              <li> <b>repeat:</b> articles that feature a word a minimum of <i>n</i> times (max 5) - e.g. <b>repeat3:"climate"</b> <a href='./#api=doc&query=repeat3:"climate"&contentmode=ArtList&maxrecords=75&timespan=1w' target="_BLANK">(example)</a> </li>
             </ul>
           </li>
-          <li> <b>Image tags</b> - images within content are processed using deep learning algorithms to identify features and text they contain. Search for available tags in the dialogue box (<a href='https://gdelt.github.io/#api=doc&query=&imagetag=military%20vehicle,tank,self%20propelled%20artillery&sourcecountry=UP&contentmode=ImageCollageInfo&maxrecords=75&timespan=1w' target='_blank'>example</a>)</li>
+          <li> <b>Image tags</b> - images within content are processed using deep learning algorithms to identify features and text they contain. Search for available tags in the dialogue box (<a href='./#api=doc&query=&imagetag=military%20vehicle,tank,self%20propelled%20artillery&sourcecountry=UP&contentmode=ImageCollageInfo&maxrecords=75&timespan=1w' target='_blank'>example</a>)</li>
           <li> <b>Themes</b> - content is interpreted and linked to 'themes' reflecting its subject matter, which you can search by. Themes are based on GDELT's <a href="https://blog.gdeltproject.org/gdelt-global-knowledge-graph/" target="_BLANK">Global Knowledge Graph</a> (GKG). </li>
           <li> <b>Source countries</b> - countries of content origin. Choose up to ~7 - current implementation interprets these as (tag1 OR tag2) </li>
           <li> <b>Source languages</b> - languages of the content. Choose up to ~7 - currently interpreted as (theme1 OR theme2) </li>
@@ -366,9 +365,9 @@ which must be matched in the same 15s clip as the positive
         </ul>
         <b> ANALYSIS MODES </b>
         <ul>
-          <li> <b>CONTENT</b> - This tab offers the various modes to access the content matching the search (<a href='https://gdelt.github.io/#api=doc&query=Essequibo Venezuela (border OR claim OR territory OR territorial)&sourcecountry=GY&contentmode=ArtList&maxrecords=75&timespan=1y' target='_blank'>example1</a>  )</li>
-          <li> <b>TIMELINE</b> - This offers the modes available to view volumetric trends for the query over time (<a href='https://gdelt.github.io/#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=VE,GY&timelinemode=TimelineSourceCountry&timelinesmooth=14&timespan=1y' target='_blank'>example1</a>, <a href='https://gdelt.github.io/#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=-US&sourcelang=spa,eng&timelinemode=TimelineLang&timelinesmooth=14&timespan=1y' target='_blank'>example2</a>). </li>
-          <li> <b>GEO</b> - Geographical tools to investigate media published in the past 7 days. Some modes (e.g. default POINT DATA <a href='https://gdelt.github.io/#api=geo&query=(refugees%20OR%20migrants)%20(boat%20OR%20ship)&geolocationcc=AG,LY,TS,MO,LE,EG&geomode=PointData&geotimespan=7d' target='_blank'>example</a>) report not the origins of content, but countries and place names that are referenced. Some of the modes are image-specific, and will only work for image tag searches. Others work only with search terms and not image tags. </li>
+          <li> <b>CONTENT</b> - This tab offers the various modes to access the content matching the search (<a href='./#api=doc&query=Essequibo Venezuela (border OR claim OR territory OR territorial)&sourcecountry=GY&contentmode=ArtList&maxrecords=75&timespan=1y' target='_blank'>example1</a>  )</li>
+          <li> <b>TIMELINE</b> - This offers the modes available to view volumetric trends for the query over time (<a href='./#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=VE,GY&timelinemode=TimelineSourceCountry&timelinesmooth=14&timespan=1y' target='_blank'>example1</a>, <a href='./#api=doc&query=(Essequibo%20OR%20Esequiba)&sourcecountry=-US&sourcelang=spa,eng&timelinemode=TimelineLang&timelinesmooth=14&timespan=1y' target='_blank'>example2</a>). </li>
+          <li> <b>GEO</b> - Geographical tools to investigate media published in the past 7 days. Some modes (e.g. default POINT DATA <a href='./#api=geo&query=(refugees%20OR%20migrants)%20(boat%20OR%20ship)&geolocationcc=AG,LY,TS,MO,LE,EG&geomode=PointData&geotimespan=7d' target='_blank'>example</a>) report not the origins of content, but countries and place names that are referenced. Some of the modes are image-specific, and will only work for image tag searches. Others work only with search terms and not image tags. </li>
           <li> <b>TV</b> - This explores GDELT's Television Explorer API, a collaboration with the Internet Archive to make searchable the "closed captioning" text streams accompanying TV news - i.e. the digitised speech that is broadcast - for selected networks.</li>
         </ul>
         <b> COMPARE TOOL </b>
