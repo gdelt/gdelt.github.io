@@ -1,4 +1,4 @@
-// Manages iframe zoon functionality and responsive panel re-sizing
+// Manages iframe zoom functionality and responsive panel re-sizing
 
 // cookie functions remember app zoom settings - one for GDELT one for Compare tool
 // both settings are saved together in a JSON string to cookie 'zoom' argument
@@ -22,27 +22,16 @@ function readCookie() {
   return JSON.parse(cookie.zoom);
 }
 
-// iframe zoom position buttons at top-right of iframe
-new Tether({
-    element: '#buttons_box',
-    target: '#main_panel_title_row',
-    attachment: 'bottom right',
-    targetAttachment: 'bottom right',
-    constraints: [{
-        to: 'window',
-        attachment: 'together'
-    }]
-});
-
 // iframe zoom functionality
 var dw = 1;  var dh = 1;
 var dwc = 1; var dhc = 1;
 var scale = 1;         // main gdelt iframe scaler
-var comp_scale = 1; // scale for compare scaler
+var comp_scale = 1;    // scale for compare scaler
 
 var cookie = readCookie();
 if(typeof cookie !== 'undefined') { if(cookie.zoom) {
   scale = cookie.zoom;
+  if(scale == NaN) scale = 1; // safeguard
   dw = 1/cookie.zoom;
   dh = 1/cookie.zoom;
   comp_scale = cookie.compzoom;
@@ -51,7 +40,7 @@ if(typeof cookie !== 'undefined') { if(cookie.zoom) {
 }}
 
 // rescale iframe based on zoom keys
-// seperate zoom settings for GDELT and Compare iframes
+// separate zoom settings for GDELT and Compare iframes
 function iframe_zoom(x) {
   var comp_mode = /^Compare/.test($('#iframe_title').text()); // true if on Compare screen
   if(VERBOSE) { clog('iframe_zoom ' + comp_mode); }
@@ -98,15 +87,3 @@ function resize_panels() {
 resize_panels();
 $( window ).resize(function() { resize_panels(); });
 
-// for some reason the Tether code needs to be duplicated here to work
-// (a bug to resolve)
-new Tether({
-    element: '#buttons_box',
-    target: '#main_panel_title_row',
-    attachment: 'bottom right',
-    targetAttachment: 'bottom right',
-    constraints: [{
-        to: 'window',
-        attachment: 'together'
-    }]
-});

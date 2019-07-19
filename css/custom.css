@@ -501,12 +501,6 @@ html, body {
   transform-origin: 0 0;
   z-index: 990;
 }
-.zoombutton {
-  display: inline-block;
-  float: right;
-  width: 30px !important;
-  z-index: 999;
-}
 
 #analysis_buttons_lab{
   padding: 0px;
@@ -516,16 +510,6 @@ html, body {
 
 #analysis_buttons{
   margin-bottom: 4px;
-}
-
-#buttons_box {
-  min-width: 60px !important;
-  padding: 5px;
-  z-index: 999;
-}
-
-#buttons_box > button {
-  margin-top: 0px;
 }
 
 #add_data, #view_data, #clear_data, #compare_modal {

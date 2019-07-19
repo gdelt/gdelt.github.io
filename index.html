@@ -18,9 +18,9 @@
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/daterangepicker.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="fontawesome-free/css/all.css" rel="stylesheet">
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/tether.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/selectize.min.js"></script>
   <script type="text/javascript" src="js/moment.min.js"></script>
@@ -46,15 +46,10 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link2</a>
-      </li> -->
-    </ul>
+  <div style="position: absolute; right: 5px;">
+    <button class='helpbutton' type="button" data-target="#helpModal" data-toggle="modal" style="float: right; margin-right: 5px;">Help</button>
+    <button class='zoombutton' type="button" onclick="iframe_zoom(1)" style="float: right; margin-right: 5px; width: 30px">+</button>
+    <button class='zoombutton' type="button" onclick="iframe_zoom(0)" style="float: right; margin-right: 5px; width: 30px">-</button>
   </div>
 </nav>
 
@@ -65,8 +60,7 @@
     <div class="col-md-4 col-sm-12" id="side_panel">
     <p style="line-height: 100%; display: block; padding-top: 4px;">
       <a href="https://www.gdeltproject.org/" target="_blank">GDELT</a>
-      is the <em>Global Database of Events, Language and Tone</em>, a multilingual web platform offering powerful search tools. This page is an interface to some GDELT APIs but has has no affiliation.
-      <a data-target="#helpModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" href="#helpModal">How to use GDELT.</a>
+      is the <em>Global Database of Events, Language and Tone</em>, a multilingual web platform offering powerful search tools. This page is an interface to some GDELT APIs but has has no affiliation. See Help for a quick guide. 
       <a href="https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/" target="_blank">API documentation.</a>
     </p>
     <hr />
@@ -320,18 +314,19 @@ which must be matched in the same 15s clip as the positive
 
       <div id='main_panel_title_row' class="row col-12">
         <h3 id='iframe_title' class='col-12'>[ ]</h3>
+        <!-- <div id='buttons_box' class='col-1'>
+          <button class='zoombutton' type="button" onclick="iframe_zoom(0)">-</button>
+          <button class='zoombutton' type="button" onclick="iframe_zoom(1)">+</button>
+        </div> -->
+        
       </div>
       <div id='iframe_container' class="row col-12">
         <iframe id="gdelt_iframe" width=100% src="" frameBorder="0"></iframe>
       </div>
-      <div id='buttons_box'>
-        <button class='zoombutton' type="button" onclick="iframe_zoom(0)" style="display: inline-block;">-</button>
-        <button class='zoombutton' type="button" onclick="iframe_zoom(1)" style="display: inline-block;">+</button>
-      </div>
     </div>
+
   </div>
 </div>
-
 
 <!-- HELP MODAL -->
 <div class="modal fade" id="helpModal">
@@ -355,13 +350,18 @@ which must be matched in the same 15s clip as the positive
         </ul>
         <b> QUERY DEFINITION </b>
         <ul>
-          <li> <b>Search term</b> - any work or phrase in English (GDELT matches these against English translations of non-English content). Phrases should be in double quotes. Spaces outside quotes are interpreted as AND. You can also search for <a href='https://gdelt.github.io/#api=geo&query=(missile OR nuclear)&geolocationcc=KN&geomode=PointData&geotimespan=7d' target='_blank'>'(x OR y)'</a> </li>
+          <li> <b>Search term</b> - any work or phrase in English (GDELT matches these against English translations of non-English content). Phrases should be in double quotes. Spaces outside quotes are interpreted as AND. You can also search for <a href='https://gdelt.github.io/#api=geo&query=(missile OR nuclear)&geolocationcc=KN&geomode=PointData&geotimespan=7d' target='_blank'>'(x OR y)'</a>.  There are also two powerful special search functions that can help to find the right content:
+            <ul>
+              <li> <b>near:</b> articles that feature two words within <i>n</i> words of each other - e.g. <pre>near5:"climate emergency"</pre> </li>
+              <li> <b>repeat:</b> articles that feature a word a minimum of <i>n</i> times (max 5) - e.g. <pre>repeat3:"climate"</pre> </li>
+            </ul>
+          </li>
           <li> <b>Image tags</b> - images within content are processed using deep learning algorithms to identify features and text they contain. Search for available tags in the dialogue box (<a href='https://gdelt.github.io/#api=doc&query=&imagetag=military%20vehicle,tank,self%20propelled%20artillery&sourcecountry=UP&contentmode=ImageCollageInfo&maxrecords=75&timespan=1w' target='_blank'>example</a>)</li>
-          <li> <b>Themes</b> - content is interpreted and linked to 'themes' reflecting its subject matter, which you can search by. Themes are based on GDELT's Global Knowledge Graph (GKG). </li>
+          <li> <b>Themes</b> - content is interpreted and linked to 'themes' reflecting its subject matter, which you can search by. Themes are based on GDELT's <a href="https://blog.gdeltproject.org/gdelt-global-knowledge-graph/" target="_BLANK">Global Knowledge Graph</a> (GKG). </li>
           <li> <b>Source countries</b> - countries of content origin. Choose up to ~7 - current implementation interprets these as (tag1 OR tag2) </li>
           <li> <b>Source languages</b> - languages of the content. Choose up to ~7 - currently interpreted as (theme1 OR theme2) </li>
-          <li> <b>Domain</b> - define web domain of content - e.g. 'bbc.co.uk' or top-level domain '.gov' (US government content) </li>
-          <li> <b>Date range</b> - define any window for content dated in the past 12 months. The 'Recent' field must be clear to use this. </li>
+          <li> <b>Domain</b> - define web domain of content - e.g. 'bbc.co.uk' or top-level domain '.gov' (US government content). Currently supports up to 5 domains, or 7 with _Exclude subdomains_ checked.</li>
+          <li> <b>Date range</b> - define any window for content dated since 1 January 2017. 'Recent' field must be clear to use this. CONTENT view will only return matching articles published in the most recent 3 months of your specified window.</li>
           <li> <b>Recent</b> - set to return most recent content in terms of minutes/hours/days/months/year. Use format '12h', '5d', '3w', '6m', '1y' (1y max) or just a number for minutes. </li>
         </ul>
         <b> ANALYSIS MODES </b>
@@ -456,6 +456,7 @@ which must be matched in the same 15s clip as the positive
 
     </div>
   </div>
+
 </div>
 
 <script type="text/javascript" src="responsive.js"></script>
