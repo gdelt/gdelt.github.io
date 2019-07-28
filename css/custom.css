@@ -564,7 +564,7 @@ html, body {
     label, .inputTabLinks, .outputTabLinks, p, h3, button {
         font-size: 0.8em !important;
     }
-    /* .navbar-brand { font-size: 0.8em !important; } */
+    .navbar-brand { font-size: 0.8em !important; }
 }
 
 /* sm */
@@ -572,7 +572,7 @@ html, body {
     label, .inputTabLinks, .outputTabLinks, p, button {
         font-size: 0.7em !important;
     }
-    .navbar-brand { font-size: 0.8em !important; }
+    /* .navbar-brand { font-size: 0.8em !important; } */
 }
 
 /* md */
@@ -580,7 +580,7 @@ html, body {
     label, .inputTabLinks, .outputTabLinks, p, button {
         font-size: 0.85em !important;
     }
-    .navbar-brand { font-size: 0.9em !important; }
+    /* .navbar-brand { font-size: 0.9em !important; } */
 }
 
 /* lg */
@@ -588,30 +588,30 @@ html, body {
     label, .inputTabLinks, .outputTabLinks, p, button {
         font-size: 1em !important;
     }
-    .navbar-brand { font-size: 1em !important; }
+    /* .navbar-brand { font-size: 1em !important; } */
 }
 
 /* sm */
 @media screen and (min-width: 768px) {
-    h3 {
+    /* h3 {
         font-size: 1.5em !important;
-    }
+    } */
     .navbar-brand { font-size: 1.5em !important; }
 }
 
 /* md */
 @media screen and (min-width: 992px) {
-    h3  {
+    /* h3  {
         font-size: 1.7em !important;
-    }
+    } */
     .navbar-brand { font-size: 1.7em !important; }
 }
 
 /* lg */
 @media screen and (min-width: 1200px) {
-    h3 {
+    /* h3 {
         font-size: 1.9em !important;
-    }
+    } */
     .navbar-brand { font-size: 1.9em !important; }
 }
 
