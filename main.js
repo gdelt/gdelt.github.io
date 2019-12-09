@@ -224,6 +224,7 @@ $("#maxrecords").on('input', function(){ manage_event('maxrecords', 'maxrecords'
 $("#timelinesmooth").on('input', function(){ manage_event('timelinesmooth', 'timelinesmooth', 'timelinesmoothlab') } );
 $("#geotimespan").on('input', function(){ manage_event('geotimespan', 'geotimespan') } );
 $("#geolocation").keyup(function(){ manage_event('geolocation', 'geolocation' )} );
+$("#geogeores").keyup(function(){ manage_event('geogeores', 'geogeores') } );
 $("#geonear").keyup(function(){ manage_event('geonear', 'geonear') } );
 $("#context").keyup(function(){ manage_event('context', 'context') } );
 

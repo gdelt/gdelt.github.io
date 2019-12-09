@@ -386,7 +386,7 @@ a:hover { color: cyan;}
   margin-left: 6px;
 }
 
-#geotimespan{
+#geotimespan, #geogeores{
   width: 60px !important;
   text-align: center;
 }

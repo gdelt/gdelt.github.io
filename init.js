@@ -42,11 +42,11 @@ var query = {
   'timelinemode':'TimelineVol', 'timelinesmooth':'0', 'timezoom':'',
   // DOC CONTENT & TIMELINE args: QKEYS.slice(30, 35)
   'format':'', 'timespan':'1d', 'startdatetime':'', 'enddatetime':'', 'searchlang':'',
-  // GEO only args:               QKEYS.slice(35, 38)
-  'geomode':'PointData', 'geoformat':'', 'geotimespan':'1d',
-  // special handling args        QKEYS.slice(38, 39)
+  // GEO only args:               QKEYS.slice(35, 39)
+  'geomode':'PointData', 'geoformat':'', 'geotimespan':'1d', 'geogeores':'',
+  // special handling args        QKEYS.slice(39, 40)
   'domainis': false,
-  // TV args:                     QKEYS.slice(39, 44)
+  // TV args:                     QKEYS.slice(40, 45)
   'tvmode':'TimelineVol', 'datacomb':'', 'datanorm':'', 'last24':'', 'tvmaxrecords':''
 };
 var QKEYS = Object.keys(query).slice(); // fixed array of query dict keys so we can work with their indices
@@ -99,8 +99,8 @@ function build_hash() {
   if( VERBOSE && ['doc','geo','tv'].indexOf(query.api) == -1 ) { alert('query.api should be either doc, geo or tv'); }
   if(current_tab == 'tab_content') { var api_keys = QKEYS.slice(0,14).concat(QKEYS.slice(23,27)).concat(QKEYS.slice(30,35)); }
   if(current_tab == 'tab_timeline') { var api_keys = QKEYS.slice(0,14).concat(QKEYS.slice(27,30)).concat(QKEYS.slice(30,35)); }
-  if(current_tab == 'tab_geo') { var api_keys = QKEYS.slice(0,18).concat(QKEYS.slice(35,38)); }
-  if(current_tab == 'tab_tv') { var api_keys = QKEYS.slice(0,2).concat(QKEYS.slice(18,23)).concat(QKEYS.slice(28,29)).concat(QKEYS.slice(30,34)).concat(QKEYS.slice(39,44)); }
+  if(current_tab == 'tab_geo') { var api_keys = QKEYS.slice(0,18).concat(QKEYS.slice(35,39)); }
+  if(current_tab == 'tab_tv') { var api_keys = QKEYS.slice(0,2).concat(QKEYS.slice(18,23)).concat(QKEYS.slice(28,29)).concat(QKEYS.slice(30,34)).concat(QKEYS.slice(40,45)); }
   if(current_tab != 'tab_geo') { if(query.timespan) { api_keys.splice(api_keys.indexOf('startdatetime'), 2); }}
   if(query.domainis) { api_keys.push('domainis'); }
   var hash = 'api=' + query.api;

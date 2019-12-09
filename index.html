@@ -249,10 +249,16 @@ been mentioned within content within the past 7 days.">GEO</button>
             <label for="geoformat">Format</label>
             <select class="form-control pickerSelectClass dd_opt" id="geoformat" class="col-12"></select>
           </div>
-          <div class="col-4 selectContainer">
-            <label for="geotimespan" class="center-block">Timespan</label>
-            <input class="center-block" type="text" id="geotimespan" value='1d' title='Timespan from 1-7 days in format "7d"'>
-            <!-- <input type="range" min="15" max="1440" value="1440" step="15" class="slider col-12" id="geotimespan" title="Timespan in last 24h (maximum period for the GEO API)"> -->
+          <div class="col-2 selectContainer">
+            <label for="geotimespan" class="center-block2">Recent</label>
+            <input class="center-block2" type="text" id="geotimespan" value='1d' title='Timespan from 1-7 days in format "7d"'>
+          </div>
+          <div class="col-2 selectContainer">
+            <label for="geogeores" class="center-block2">GeoRes</label>
+            <input class="center-block2" type="text" id="geogeores" value='' title='GeoRes: geographical specificity filter:
+0 = no filter (default)
+1 = exclude country-level references
+2 = also exclude ADM1-level references (top sub-national region)'>
           </div>
           <div class="col-4 selectContainer">
             <label for="geonear">Near</label>
