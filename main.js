@@ -21,14 +21,23 @@ var daterange = $('input[name="daterange"]').daterangepicker({
   endDate: end_date.format(dtft)
 });
 
-$('#datetime').on('apply.daterangepicker', function(ev, picker) {
-  start_date = picker.startDate.startOf('day');
-  end_date = picker.endDate.endOf('day');
+function updateDate(picker){ // read input widget and update data objects
+  clog('update datetime 2')
+  var start_date = picker.startDate.startOf('day');
+  var end_date = picker.endDate.endOf('day');
   update_query('startdatetime', start_date.format('YYYYMMDDHHmmss'), buildhash = false);
   update_query('enddatetime', end_date.format('YYYYMMDDHHmmss'));
-});
+}
 
-$(function() { daterange; }); // date range setup
+setTimeout(function() { // not sure why needed but without it listener fails to initialise
+  $('#datetime').on('apply.daterangepicker', function(ev, picker) {
+    clog('update datetime 1');
+    updateDate(picker); 
+  });
+}, 1000);
+
+
+// $(function() { daterange; }); // date range setup
 
 
 // CONFIGURE TABS
@@ -106,6 +115,17 @@ if(window.location.hash != ''){
         if(['trans','domainis'].indexOf(id) > -1){
           document.getElementById(id).checked = query[id];         // checkboxes
         } else { if(id != 'timezoom') document.getElementById(id).value = query[id]; }  // text inputs
+      } else {
+        if(id == 'startdatetime'){
+          var sd = init_argset.startdatetime; // 20170405000000
+          var ed = init_argset.enddatetime;   // 20170406235959
+          $('#datetime').daterangepicker({
+            startDate: [sd.substr(4,2), sd.substr(6,2), sd.substr(0,4)].join('/'), 
+            endDate: [ed.substr(4,2), ed.substr(6,2), ed.substr(0,4)].join('/') 
+          });
+          $('#timespan').val('')
+          updateDate( $('#datetime').data('daterangepicker') );
+        }
       }
       if(id == 'maxrecords') document.getElementById('maxrecordslab').innerHTML = init_argset[id];
       if(id == 'timelinesmooth') document.getElementById('timelinesmoothlab').innerHTML = init_argset[id];
