@@ -22,7 +22,6 @@ var daterange = $('input[name="daterange"]').daterangepicker({
 });
 
 function updateDate(picker){ // read input widget and update data objects
-  clog('update datetime 2')
   var start_date = picker.startDate.startOf('day');
   var end_date = picker.endDate.endOf('day');
   update_query('startdatetime', start_date.format('YYYYMMDDHHmmss'), buildhash = false);
@@ -31,7 +30,6 @@ function updateDate(picker){ // read input widget and update data objects
 
 setTimeout(function() { // not sure why needed but without it listener fails to initialise
   $('#datetime').on('apply.daterangepicker', function(ev, picker) {
-    clog('update datetime 1');
     updateDate(picker); 
   });
 }, 1000);
