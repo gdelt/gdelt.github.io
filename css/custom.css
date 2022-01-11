@@ -487,7 +487,7 @@ a:hover { color: cyan;}
 
 html, body {
   background-color: #ccc;
-  /*overflow: hidden;*/
+  overflow: hidden;
   height: 100%;
   width: 100%;
 }
