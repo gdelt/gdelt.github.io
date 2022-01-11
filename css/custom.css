@@ -5,7 +5,8 @@ http://parkhurstdesign.com/reset-bootstrap-padding-margins-for-theming/
 */
 
 html,body {
-  height: 100%; margin: 0px; padding: 0px;
+  height: 100% !important;
+  margin: 0px; padding: 0px;
 }
 
 #navbar {
