@@ -1,3 +1,4 @@
+
 /*
 REMOVE DEFAULT BOOTSTRAP MARGINS/PADDING
 http://parkhurstdesign.com/reset-bootstrap-padding-margins-for-theming/
@@ -9,6 +10,10 @@ html,body {
 
 #navbar {
   margin-bottom:0;
+}
+
+nav.navbar {
+  padding: 0 16px 0 16px;
 }
 
 .alert {
